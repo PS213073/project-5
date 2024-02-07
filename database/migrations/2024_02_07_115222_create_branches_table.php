@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('branches', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->text('postal_code');
+            $table->text('address');
+            $table->integer('telephone_number');
+            $table->text('email_adress');
+            $table->text('name');
         });
     }
 

@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('contact_forms', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('telephone_number');
+            $table->text('email_address');
+            $table->text('invoice_number')->nullable();
+            $table->text('message');
         });
     }
 
