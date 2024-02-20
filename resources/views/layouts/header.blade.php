@@ -7,12 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <script src="{{ asset('main.js') }}"></script>
     @vite('resources/css/app.css')
     <title>Document</title>
 </head>
 
 <body>
-    <header class="">
+    <header>
         <div class="theme-logo">
             GV
         </div>
@@ -29,4 +30,3 @@
             <a href=""><i class="ri-shopping-cart-2-line"></i></a>
         </div>
     </header>
-    <main>
