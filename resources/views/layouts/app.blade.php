@@ -1,36 +1,27 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+<section class="theme-hero__bgImage theme-bg-transparent"></section>
+<section class="theme-product w-full flex justify-center flex-col">
+    <h2 class="text-center text-3xl font-bold pb-16">Producten</h2>
+    <div class="flex justify-center align-middle items-center">
+        <div class="theme-product-one p-3 flex items-center flex-col">
+            <img class="w-1/3" src="{{ asset('images/product1.png') }}" alt="product1">
+            <div class="pt-8">
+                <p>Pokemon plant</p>
+                <b>&euro; 10</b>
+            </div>
         </div>
-    </body>
-</html>
+        <div class="theme-product-two p-3 flex items-center flex-col">
+            <img class="w-full" src="{{ asset('images/product2.png') }}" alt="product2">
+            <div>
+                <p>Money plant</p>
+                <b>&euro; 10</b>
+            </div>
+        </div>
+        <div class="theme-product-three p-3 flex items-center flex-col">
+            <img class="w-1/3" src="{{ asset('images/product3.png') }}" alt="product3">
+            <div class="pt-8">
+                <p>Groot plant</p>
+                <b>&euro; 10</b>
+            </div>
+        </div>
+    </div>
+</section>
