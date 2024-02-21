@@ -17,7 +17,7 @@
                 <input class="input__places" type="button" value="Best">
             </div>
         </div>
-        <form action="" class="flex flex-col gap-4">
+        <form action="" class="flex flex-col gap-2">
             <label for="">Naam*</label>
             <input type="text" name="name" id="name">
             <label for="">Telefoonnummer*</label>
@@ -26,12 +26,11 @@
             <input type="text" name="email" id="email">
             <label for="">Facatuurnummer</label>
             <input type="text" name="facatuurnummer" id="facatuurnummer">
-            <div class="inline-block">
-                <label for="">Bericht*</label>
-                {{-- <input type="textarea" name="bericht" id="berict"> --}}
-            </div>
+            <label for="">Bericht*</label>
+            <input class="bg-white h-[10rem] w-[500px] border border-black rounded-md" type="textarea" name="bericht"
+                id="berict">
 
-            <input type="button">
+            <button class="bg-[#3E6553] text-white h-[50px] w-[160px] border border-black rounded-md">Verzenden</button>
         </form>
     </div>
 </section>
