@@ -1,4 +1,39 @@
-<section class="theme-hero__bgImage theme-bg-transparent"></section>
+<section class="home" id="home">
+    <div class="home__container container grid">
+        <img src="{{ asset('images/home.png') }}" alt="" class="home__img">
+
+        <div class="home__data">
+            <h1 class="home__title">
+                Plants will make <br> your life better
+            </h1>
+            <p class="home__description">
+                Create incredible plant design for your offices or apastaments.
+                Add fresness to your new ideas.
+            </p>
+
+            <a href="" class="button button--flex">
+                Explore <i class="ri-arrow-right-down-line button__icon"></i>
+            </a>
+        </div>
+
+        <div class="home__social">
+            <span class="home__social-follow">
+                Follow Us
+            </span>
+            <div class="home__social-links">
+                <a href="" class="home__social-link" target="_blank">
+                    <i class="ri-facebook-fill"></i>
+                </a>
+                <a href="" class="home__social-link" target="_blank">
+                    <i class="ri-instagram-line"></i>
+                </a>
+                <a href="" class="home__social-link" target="_blank">
+                    <i class="ri-twitter-x-line"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="theme-product w-full flex justify-center flex-col">
     <h2 class="text-center text-3xl font-bold pb-16">Producten</h2>
     <div class="flex justify-center align-middle items-center">

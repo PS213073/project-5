@@ -1,3 +1,5 @@
+</main>
+
 <footer class="footer p-10">
     <nav>
         <h6 class="footer-title">Paginas</h6>
