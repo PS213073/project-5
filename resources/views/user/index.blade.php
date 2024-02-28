@@ -42,18 +42,46 @@
     <section>
         <div class="slider p-12">
             @foreach ($products as $product)
-                <div class="product-card p-3 flex items-center flex-col">
-                    <img class="rounded-t-md product-img w-[300px] h-[200px]" src="{{ $product->image }}"
-                        alt="{{ $product->name }}">
+                <div class="product-card p-3 flex items-center flex-col" data-toggle="modal">
+                    <img data-content="image" class="rounded-t-md product-img w-[300px] h-[200px]"
+                        src="{{ $product->image }}" alt="{{ $product->name }}">
                     <div class="pt-8 flex flex-col">
-                        <p class="name">{{ $product->name }}</p>
-                        <b class="price">&euro; {{ $product->price }}</b>
-                        <a class="popup-btn">Quick View</a>
+                        <div class="pb-4" data-content="name">
+                            <p class="name truncate">{{ $product->name }}</p>
+                        </div>
+                        <div data-content="price" class="pb-4">
+                            <b class="price">&euro; {{ $product->price }}</b>
+                        </div>
+                        <div class="pb-4">
+                            <a class="popup-btn">Meer info</a>
+                        </div>
                     </div>
                 </div>
             @endforeach
         </div>
     </section>
+
+    <!-- modal -->
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="fas fa-times close-btn"></i></a>
+            <div class="product-img">
+                <img class="image" src="3.png" alt="">
+            </div>
+            <div class="info">
+                <h2 class="name">Camera<br><span>Classic Camera</span></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex
+                    ea commodo consequat.</p>
+                <span class="price">$250.00</span>
+                <a href="#" class="add-cart-btn">Add to Cart</a>
+                <a href="#" class="add-wish">Add to Wishlist</a>
+            </div>
+        </div>
+    </div>
+
 </main>
 {{-- @endsection('IndexMain') --}}
 
@@ -61,6 +89,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 <script>
     $('.slider').slick({
         infinite: true,
@@ -90,19 +119,42 @@
                     slidesToScroll: 1
                 }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
     });
 
-    $('.slider').on('mousewheel', function(e, delta) {
+    $('.slider').on('mousewheel', function(e) {
         e.preventDefault();
 
-        if (delta < 0) {
+        if (e.originalEvent.wheelDelta < 0) {
             $(this).slick('slickNext');
+            // console.log('slickNext');
         } else {
             $(this).slick('slickPrev');
+            // console.log('slickPrev');
         }
+    });
+
+    $(document).ready(function() {
+        var $popupViews = $('.popup-view');
+        var $popupBtns = $('.popup-btn');
+        var $closeBtns = $('.close-btn');
+
+        $($popupBtns).on('click', function() {
+            $($popupViews).toggleClass('active');
+        });
+
+        $closeBtns.on("click", function() {
+            $popupViews.removeClass('active');
+        });
+    });
+
+    $('[data-toggle="modal"]').on('click', function(e) {
+        var modalText = $(this).find('[data-content="name"]').text();
+        var modalImage = $(this).find('[data-content="image"]').attr('src');
+        var modalCode = $(this).find('[data-content="price"]').text();
+        $('.name').text(modalText);
+        $('.price').text(modalCode);
+        $('.image').attr('src', modalImage);
+        console.log(modalText + modalImage);
     });
 </script>

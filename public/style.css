@@ -208,8 +208,7 @@ main {
 
 .product-card {
     background-color: #FFF;
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-    gap: 5px;
+    max-height: 100%;
 }
 
 .product-card .product-img {
@@ -247,6 +246,11 @@ main {
     border-radius: 20px;
     cursor: pointer;
     width: 121px;
+}
+
+.product-card .popup-btn:hover {
+    background: var(--first-color-alt);
+    transition: all 1s;
 }
 
 /*=============== HOME ===============*/
@@ -552,5 +556,191 @@ footer {
 
     .scrollup {
         right: 3rem;
+    }
+}
+
+
+/* modal */
+/*Styles for popup view*/
+
+.popup-view {
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.popup-view.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-card {
+    position: relative;
+    display: flex;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+}
+
+.popup-card .product-img {
+    z-index: 2;
+    background: #1D212B;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 90%;
+    transform: translateY(25px);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.popup-card .product-img img {
+    z-index: 2;
+    position: relative;
+    width: 450px;
+    left: -50px;
+}
+
+.popup-card .info {
+    z-index: 2;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.popup-card .close-btn {
+    color: #555;
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.popup-card .info h2 {
+    font-size: 40px;
+    line-height: 20px;
+    margin: 10px;
+}
+
+.popup-card .info h2 span {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.popup-card .info p {
+    font-size: 15px;
+    margin: 10px;
+}
+
+.popup-card .info .price {
+    font-size: 45px;
+    font-weight: 300;
+    margin: 10px;
+}
+
+.popup-card .info .add-cart-btn {
+    color: #fff;
+    background: #009DD2;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 10px auto;
+    padding: 10px 50px;
+    border-radius: 20px;
+}
+
+.popup-card .info .add-wish {
+    color: #009DD2;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/*Responsive styles*/
+
+@media (max-width: 900px) {
+    .popup-card {
+        flex-direction: column;
+        width: 550px;
+        height: auto;
+    }
+
+    .popup-card .product-img {
+        z-index: 3;
+        width: 100%;
+        height: 200px;
+        transform: translateY(0);
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .popup-card .product-img img {
+        left: initial;
+        max-width: 100%;
+    }
+
+    .popup-card .info {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .popup-card .info h2 {
+        margin: 20px 5px 5px 5px;
+        font-size: 25px;
+    }
+
+    .popup-card .info h2 span {
+        font-size: 10px;
+    }
+
+    .popup-card .info p {
+        margin: 5px;
+        font-size: 13px;
+    }
+
+    .popup-card .info .price {
+        margin: 5px;
+        font-size: 30px;
+    }
+
+    .popup-card .info .add-cart-btn {
+        margin: 5px auto;
+        padding: 5px 40px;
+        font-size: 14px;
+    }
+
+    .popup-card .info .add-wish {
+        font-size: 14px;
+    }
+
+    .popup-card .close-btn {
+        z-index: 4;
     }
 }
