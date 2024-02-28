@@ -217,12 +217,6 @@ main {
     align-items: center;
 }
 
-.popup-card .product-img img {
-    position: relative;
-    width: 450px;
-    left: -50px;
-}
-
 .product-card .name {
     color: #000;
     font-size: 15px;
@@ -609,8 +603,10 @@ footer {
 .popup-card .product-img img {
     z-index: 2;
     position: relative;
-    width: 450px;
-    left: -50px;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .popup-card .info {
@@ -636,8 +632,8 @@ footer {
 }
 
 .popup-card .info h2 {
-    font-size: 40px;
-    line-height: 20px;
+    font-size: 30px;
+    line-height: 40px;
     margin: 10px;
 }
 
@@ -660,7 +656,7 @@ footer {
 
 .popup-card .info .add-cart-btn {
     color: #fff;
-    background: #009DD2;
+    background: var(--first-color);
     font-size: 16px;
     font-weight: 600;
     text-align: center;
@@ -672,7 +668,7 @@ footer {
 }
 
 .popup-card .info .add-wish {
-    color: #009DD2;
+    color: var(--first-color);
     font-size: 16px;
     text-align: center;
     font-weight: 600;
@@ -699,7 +695,7 @@ footer {
     }
 
     .popup-card .product-img img {
-        left: initial;
+        /* left: initial; */
         max-width: 100%;
     }
 

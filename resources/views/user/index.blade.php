@@ -49,6 +49,9 @@
                         <div class="pb-4" data-content="name">
                             <p class="name truncate">{{ $product->name }}</p>
                         </div>
+                        <div class="hidden pb-4" data-content="description">
+                            <p class="description truncate">{{ $product->description }}</p>
+                        </div>
                         <div data-content="price" class="pb-4">
                             <b class="price">&euro; {{ $product->price }}</b>
                         </div>
@@ -66,16 +69,12 @@
         <div class="popup-card">
             <a><i class="fas fa-times close-btn"></i></a>
             <div class="product-img">
-                <img class="image" src="3.png" alt="">
+                <img class="image" src="" alt="">
             </div>
             <div class="info">
-                <h2 class="name">Camera<br><span>Classic Camera</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex
-                    ea commodo consequat.</p>
-                <span class="price">$250.00</span>
+                <h2 class="name"></h2>
+                <p class="description"></p>
+                <span class="price"></span>
                 <a href="#" class="add-cart-btn">Add to Cart</a>
                 <a href="#" class="add-wish">Add to Wishlist</a>
             </div>
@@ -149,12 +148,14 @@
     });
 
     $('[data-toggle="modal"]').on('click', function(e) {
-        var modalText = $(this).find('[data-content="name"]').text();
         var modalImage = $(this).find('[data-content="image"]').attr('src');
+        var modalText = $(this).find('[data-content="name"]').text();
+        var modalDescription = $(this).find('[data-content="description"]').text();
         var modalCode = $(this).find('[data-content="price"]').text();
-        $('.name').text(modalText);
-        $('.price').text(modalCode);
-        $('.image').attr('src', modalImage);
+        $('.popup-card .image').attr('src', modalImage);
+        $('.popup-card .name').text(modalText);
+        $('.popup-card .price').text(modalCode);
+        $('.popup-card .description').text(modalDescription);
         console.log(modalText + modalImage);
     });
 </script>
