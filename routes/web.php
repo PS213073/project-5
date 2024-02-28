@@ -18,10 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user.index');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -38,4 +34,4 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 require __DIR__ . '/auth.php';
 
 Route::get('/fetchapi', [ApiController::class, 'fetchPlantsFromExternalApi']);
-Route::get('/test', [HomeController::class, 'index'])->name('test');
+Route::get('/', [HomeController::class, 'index'])->name('index');

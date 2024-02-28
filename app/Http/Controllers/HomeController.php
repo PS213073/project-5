@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
-        return view('test',['products'=>$products]);
+        $products = Product::paginate(10);
+        return view('user.index', ['products' => $products]);
     }
 }

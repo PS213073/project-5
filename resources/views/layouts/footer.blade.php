@@ -70,5 +70,16 @@
 </footer>
 </body>
 
+{{-- <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $('.multiple-items').slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 5
+    });
+</script> --}}
+
 
 </html>
