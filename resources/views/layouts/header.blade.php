@@ -18,12 +18,12 @@
 <body>
     <header class="header" id="header">
         <nav class="nav container p-5">
-            <a href="#" class="nav__logo">
+            <a href="{{ route('index') }}" class="nav__logo">
                 <i class="ri-leaf-line nav__logo-icon"></i> GV
             </a>
 
             <ul class="gap-6 theme-pages">
-                <li><a href="">Home</a></li>
+                <li><a href="{{ route('index') }}">Home</a></li>
                 <li><a href="">Winkel</a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
                 <li><a href="">Over Ons</a></li>

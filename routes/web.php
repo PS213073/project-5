@@ -28,10 +28,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 
 require __DIR__ . '/auth.php';
 
 Route::get('/fetchapi', [ApiController::class, 'fetchPlantsFromExternalApi']);
-Route::get('/', [HomeController::class, 'index'])->name('index');

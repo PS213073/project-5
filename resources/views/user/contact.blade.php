@@ -1,7 +1,7 @@
 @include('layouts.header')
 
-<section class="py-11">
-    <h2 class="text-center text-3xl font-bold pb-16">Contact</h2>
+<section class="py-24">
+    <h2 class="font-medium text-3xl text-center pb-8">Contact</h2>
     <div class="px-9 grid grid-cols-2">
         <div class="flex flex-col pr-6">
             <div class="map pr-8">
