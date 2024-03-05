@@ -1,87 +1,85 @@
 @include('layouts.header')
 
 {{-- @section('IndexMain') --}}
-<main>
-    <section class="home" id="home">
-        <div class="home__container container grid">
-            <img src="{{ asset('images/home.png') }}" alt="" class="home__img">
+<section class="home" id="home">
+    <div class="home__container container grid">
+        <img src="{{ asset('images/home.png') }}" alt="" class="home__img">
 
-            <div class="home__data">
-                <h1 class="home__title">
-                    Plants will make <br> your life better
-                </h1>
-                <p class="home__description">
-                    Create incredible plant design for your offices or apastaments.
-                    Add fresness to your new ideas.
-                </p>
+        <div class="home__data">
+            <h1 class="home__title">
+                Plants will make <br> your life better
+            </h1>
+            <p class="home__description">
+                Create incredible plant design for your offices or apastaments.
+                Add fresness to your new ideas.
+            </p>
 
-                <a href="" class="button button--flex">
-                    Explore <i class="ri-arrow-right-down-line button__icon"></i>
+            <a href="" class="button button--flex">
+                Explore <i class="ri-arrow-right-down-line button__icon"></i>
+            </a>
+        </div>
+
+        <div class="home__social">
+            <span class="home__social-follow">
+                Follow Us
+            </span>
+            <div class="home__social-links">
+                <a href="" class="home__social-link" target="_blank">
+                    <i class="ri-facebook-fill"></i>
                 </a>
-            </div>
-
-            <div class="home__social">
-                <span class="home__social-follow">
-                    Follow Us
-                </span>
-                <div class="home__social-links">
-                    <a href="" class="home__social-link" target="_blank">
-                        <i class="ri-facebook-fill"></i>
-                    </a>
-                    <a href="" class="home__social-link" target="_blank">
-                        <i class="ri-instagram-line"></i>
-                    </a>
-                    <a href="" class="home__social-link" target="_blank">
-                        <i class="ri-twitter-x-line"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="slider p-12">
-            @foreach ($products as $product)
-                <div class="product-card p-3 flex items-center flex-col" data-toggle="modal">
-                    <img data-content="image" class="rounded-t-md product-img w-[300px] h-[200px]"
-                        src="{{ $product->image }}" alt="{{ $product->name }}">
-                    <div class="pt-8 flex flex-col">
-                        <div class="pb-4" data-content="name">
-                            <p class="name truncate">{{ $product->name }}</p>
-                        </div>
-                        <div class="hidden pb-4" data-content="description">
-                            <p class="description truncate">{{ $product->description }}</p>
-                        </div>
-                        <div data-content="price" class="pb-4">
-                            <b class="price">&euro; {{ $product->price }}</b>
-                        </div>
-                        <div class="pb-4">
-                            <a class="popup-btn">Meer info</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </section>
-
-    <!-- modal -->
-    <div class="popup-view">
-        <div class="popup-card">
-            <a><i class="fas fa-times close-btn"></i></a>
-            <div class="product-img">
-                <img class="image" src="" alt="">
-            </div>
-            <div class="info">
-                <h2 class="name"></h2>
-                <p class="description"></p>
-                <span class="price"></span>
-                <a href="#" class="add-cart-btn">Add to Cart</a>
-                <a href="#" class="add-wish">Add to Wishlist</a>
+                <a href="" class="home__social-link" target="_blank">
+                    <i class="ri-instagram-line"></i>
+                </a>
+                <a href="" class="home__social-link" target="_blank">
+                    <i class="ri-twitter-x-line"></i>
+                </a>
             </div>
         </div>
     </div>
+</section>
 
-</main>
+<section>
+    <h2 class="font-medium text-3xl text-center">Producten</h2>
+    <div class="slider p-12">
+        @foreach ($products as $product)
+            <div class="product-card p-3 flex items-center flex-col" data-toggle="modal">
+                <img data-content="image" class="rounded-t-md product-img w-[300px] h-[200px]"
+                    src="{{ $product->image }}" alt="{{ $product->name }}">
+                <div class="pt-8 flex flex-col">
+                    <div class="pb-4" data-content="name">
+                        <p class="name truncate">{{ $product->name }}</p>
+                    </div>
+                    <div class="hidden pb-4" data-content="description">
+                        <p class="description truncate">{{ $product->description }}</p>
+                    </div>
+                    <div data-content="price" class="pb-4">
+                        <b class="price">&euro; {{ $product->price }}</b>
+                    </div>
+                    <div class="pb-4">
+                        <a class="popup-btn">Meer info</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+</section>
+
+<!-- modal -->
+<div class="popup-view">
+    <div class="popup-card">
+        <a><i class="fas fa-times close-btn"></i></a>
+        <div class="product-img">
+            <img class="image" src="" alt="">
+        </div>
+        <div class="info">
+            <h2 class="name"></h2>
+            <p class="description"></p>
+            <span class="price"></span>
+            <a href="#" class="add-cart-btn">Add to Cart</a>
+            <a href="#" class="add-wish">Add to Wishlist</a>
+        </div>
+    </div>
+</div>
 {{-- @endsection('IndexMain') --}}
 
 @include('layouts.footer')
