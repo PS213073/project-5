@@ -18,9 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//User Routes
+require __DIR__ . '/front_auth.php';
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('front.dashboard');
+})->middleware(['front'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -31,7 +34,25 @@ Route::middleware('auth')->group(function () {
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
-
+//Admin Routes
 require __DIR__ . '/auth.php';
+Route::get('/admin/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('admin.dashboard');
 
+Route::namespace('App\Http\Controllers\Admin')->name('admin.')->prefix('admin')
+    ->group(function(){
+        Route::resource('roles','RoleController');
+        Route::resource('permissions','PermissionController');
+        Route::resource('users','UserController');
+        Route::resource('posts','PostController');
+
+        Route::get('/profile',[ProfileController::class,'index'])->name('profile');
+        Route::put('/profile-update',[ProfileController::class,'update'])->name('profile.update');
+        // Route::get('/mail',[MailSettingController::class,'index'])->name('mail.index');
+        // Route::put('/mail-update/{mailsetting}',[MailSettingController::class,'update'])->name('mail.update');
+});
+
+
+// Fetch data from api
 Route::get('/fetchapi', [ApiController::class, 'fetchPlantsFromExternalApi']);
