@@ -2,8 +2,8 @@
 
 {{-- @section('IndexMain') --}}
 <section class="home" id="home">
-    <div class="home__container container grid">
-        <img src="{{ asset('images/home.png') }}" alt="" class="home__img">
+    <div class="home__container container grid grid-cols-2">
+        <div id="home__img"></div>
 
         <div class="home__data">
             <h1 class="home__title">

@@ -1,4 +1,4 @@
-@include('layouts.header')
+@include('front.layouts.header')
 
 <section class="py-24">
     <h2 class="font-medium text-3xl text-center pb-8">Contact</h2>
@@ -35,4 +35,4 @@
     </div>
 </section>
 
-@include('layouts.footer')
+@include('front.layouts.footer')
