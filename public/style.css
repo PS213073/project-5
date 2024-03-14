@@ -511,7 +511,7 @@ footer {
     }
 
     .home {
-        padding: 10rem 0 5rem;
+        padding: 10rem 5rem 10rem 5rem;
     }
 
     #home__img {
@@ -747,8 +747,8 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
-    width: 30rem;
-    height: 20rem;
+    width: 35rem;
+    height: 23rem;
     box-shadow: inset 0 0 20px 10px rgba(255, 255, 255, .6);
     border-radius: 5px;
     order: 1;
