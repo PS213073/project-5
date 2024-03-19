@@ -11,7 +11,7 @@ use Illuminate\Contracts\View\View;
 
 class ProfileController extends Controller
 {
-    // use UploadImage;
+    use UploadImage;
 
     /**
      * Display a listing of the resource.
