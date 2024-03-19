@@ -75,8 +75,7 @@
             <h2 class="name"></h2>
             <p class="description"></p>
             <span class="price"></span>
-            <a href="#" class="add-cart-btn">Add to Cart</a>
-            <a href="#" class="add-wish">Add to Wishlist</a>
+            <a href="#" class="add-cart-btn">Toevoegen &nbsp; <i class="ri-shopping-cart-line"></i></a>
         </div>
     </div>
 </div>
