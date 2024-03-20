@@ -10,9 +10,6 @@
                     stroke-linejoin="round" />
             </svg>
         </a>
-        <div class="ms-lg-3 hidden md:hidden lg:block">
-            <input placeholder="Search" type="search" class="input bg-[#fff] border-[#3E6553] border-2 h-9 w-70" />
-        </div>
     </div>
     <ul class="ms-2 d-flex navbar__nav">
         <li class="ms-2">

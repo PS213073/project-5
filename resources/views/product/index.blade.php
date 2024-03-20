@@ -4,7 +4,7 @@
             <div class="text-right">
                 @can('Product create')
                     <a href="{{ route('admin.products.create') }}"
-                        class="bg-blue-500 text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-blue-500 transition-colors ">New
+                        class="bg-[#3E6553] text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-[#1e3129] transition-colors ">New
                         product</a>
                 @endcan
             </div>
