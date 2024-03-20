@@ -57,6 +57,11 @@ class AdminSeeder extends Seeder
         $permission = Permission::create(['name' => 'Product create']);
         $permission = Permission::create(['name' => 'Product delete']);
 
+        $permission = Permission::create(['name' => 'Category access']);
+        $permission = Permission::create(['name' => 'Category edit']);
+        $permission = Permission::create(['name' => 'Category create']);
+        $permission = Permission::create(['name' => 'Category delete']);
+
         $permission = Permission::create(['name' => 'Mail access']);
         $permission = Permission::create(['name' => 'Mail edit']);
 

@@ -18,4 +18,9 @@ class Product extends Model
         'depth_cm',
         'weight_gr',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

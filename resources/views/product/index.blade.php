@@ -25,7 +25,9 @@
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
                                 Kleur</th>
-                            {{-- <th class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light w-2/12">Status</th> --}}
+                            <th
+                                class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
+                                Typen</th>
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light text-right pr-14">
                                 Actions</th>
@@ -41,6 +43,8 @@
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product->name }}</td>
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product->price }}</td>
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product->color }}</td>
+                                    <td class="py-4 px-6 border-b border-grey-light">{{ $product->category->name }}
+                                    </td>
 
                                     <td class="py-4 px-6 border-b border-grey-light text-right">
 
