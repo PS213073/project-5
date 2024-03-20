@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
 
     function __construct()
@@ -21,8 +20,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(10);
-        return view('product.index', compact('products'));
+        $categories = Category::all();
+        return view('category.index', compact('categories'));
     }
 
     /**
@@ -30,7 +29,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('category.edit', compact('category'));
     }
 
     /**
@@ -52,9 +51,9 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit(Category $category)
     {
-        return view('product.edit', ['product' => $product]);
+        return view('category.edit', compact('category'));
     }
 
     /**
