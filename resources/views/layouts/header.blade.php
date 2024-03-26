@@ -27,7 +27,7 @@
                     <div x-show="dropdownOpen"
                         class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
                         style="display: none;">
-                        <a href="{{ route('admin.profile') }}"
+                        <a href="{{ route('admin.profile.index') }}"
                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#3E6553] hover:text-white">Profile</a>
 
                         <form method="POST" action="{{ route('admin.logout') }}">

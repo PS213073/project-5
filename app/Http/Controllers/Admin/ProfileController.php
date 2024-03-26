@@ -31,7 +31,7 @@ class ProfileController extends Controller
     public function index():View
     {
         $user = auth()->user();
-        return view('setting.profile',['user'=>$user]);
+        return view('setting.profile',compact('user'));
     }
 
 
