@@ -62,6 +62,10 @@ class AdminSeeder extends Seeder
         Permission::create(['name' => 'Category create']);
         Permission::create(['name' => 'Category delete']);
 
+        Permission::create(['name' => 'ApiProduct access']);
+        Permission::create(['name' => 'ApiOrder access']);
+
+
         Permission::create(['name' => 'Mail access']);
         Permission::create(['name' => 'Mail edit']);
 
