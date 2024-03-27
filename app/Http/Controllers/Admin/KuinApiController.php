@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -20,6 +22,7 @@ class KuinApiController extends Controller
 
     public function products(Request $request)
     {
+        $categories = Category::all();
         // For fetching all products data
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $this->accessToken,
@@ -31,7 +34,7 @@ class KuinApiController extends Controller
             $products = $response->json();
 
             // Pass the product data to the admin dashboard view
-            return view('kuin.products', compact('products'));
+            return view('kuin.products', compact('products', 'categories'));
         } else {
             // Handle the case where the request failed
             return response()->json(['error' => 'Failed to fetch products from Kuin API'], $response->status());
@@ -45,7 +48,7 @@ class KuinApiController extends Controller
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $this->accessToken,
         ])->withoutVerifying()->get("https://kuin.summaict.nl/api/product/{$productId}");
-            // dd($response->body());
+
         // Check if the request was successful
         if ($response->successful()) {
             // Parse the JSON response to retrieve product data
@@ -100,10 +103,55 @@ class KuinApiController extends Controller
 
             // Pass the order data to the admin dashboard view
             return view('kuin.order', compact('order'));
-        }
-        else {
+        } else {
             // Handle the case where the request failed
             return response()->json(['error' => 'Failed to fetch order from Kuin API'], $response->status());
+        }
+    }
+
+    public function addToDatabase(Request $request)
+    {
+
+        $category = $request->input('category_id');
+        $productId = $request->input('product_id');
+        $quantity = $request->input('quantity');
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $this->accessToken,
+        ])->withoutVerifying()->post("https://kuin.summaict.nl/api/orderItem",[
+            "quantity"=> $quantity,
+            'product_id'=> $productId
+        ]);
+            // dd($response->body());
+        if ($response->successful()) {
+            $productResponse = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $this->accessToken,
+            ])->withoutVerifying()->get("https://kuin.summaict.nl/api/product/{$productId}");
+                // dd($productResponse->body());
+
+                if ($productResponse->successful()) {
+                    $data = $productResponse->json();
+
+                   $product = Product::create([
+                        'product_id' => $data['id'],
+                        'name' => $data['name'],
+                        'description' => $data['description'],
+                        'price' => $data['price'],
+                        'image' => $data['image'],
+                        'color' => $data['color'],
+                        'height_cm' => $data['height_cm'],
+                        'width_cm' => $data['width_cm'],
+                        'depth_cm' => $data['depth_cm'],
+                        'weight_gr' => $data['weight_gr'],
+                        'quantity' => $quantity,
+                        'category_id' => $category,
+                        // Add any other fields from $data that you want to store
+                    ]);
+
+                    // $data->save();
+                }
+                // dd($request->all());
+
+                return back()->with('success','besteld');
         }
     }
 }
