@@ -32,40 +32,42 @@ class AdminSeeder extends Seeder
         $admin_role = Role::create(['name' => 'admin']);
         $writer_role = Role::create(['name' => 'writer']);
 
-        $permission = Permission::create(['name' => 'Post access']);
-        $permission = Permission::create(['name' => 'Post edit']);
-        $permission = Permission::create(['name' => 'Post create']);
-        $permission = Permission::create(['name' => 'Post delete']);
+        Permission::create(['name' => 'Post access']);
+        Permission::create(['name' => 'Post edit']);
+        Permission::create(['name' => 'Post create']);
+        Permission::create(['name' => 'Post delete']);
 
-        $permission = Permission::create(['name' => 'Role access']);
-        $permission = Permission::create(['name' => 'Role edit']);
-        $permission = Permission::create(['name' => 'Role create']);
-        $permission = Permission::create(['name' => 'Role delete']);
+        Permission::create(['name' => 'Role access']);
+        Permission::create(['name' => 'Role edit']);
+        Permission::create(['name' => 'Role create']);
+        Permission::create(['name' => 'Role delete']);
 
-        $permission = Permission::create(['name' => 'User access']);
-        $permission = Permission::create(['name' => 'User edit']);
-        $permission = Permission::create(['name' => 'User create']);
-        $permission = Permission::create(['name' => 'User delete']);
+        Permission::create(['name' => 'User access']);
+        Permission::create(['name' => 'User edit']);
+        Permission::create(['name' => 'User create']);
+        Permission::create(['name' => 'User delete']);
 
-        $permission = Permission::create(['name' => 'Permission access']);
-        $permission = Permission::create(['name' => 'Permission edit']);
-        $permission = Permission::create(['name' => 'Permission create']);
-        $permission = Permission::create(['name' => 'Permission delete']);
+        Permission::create(['name' => 'Permission access']);
+        Permission::create(['name' => 'Permission edit']);
+        Permission::create(['name' => 'Permission create']);
+        Permission::create(['name' => 'Permission delete']);
 
-        $permission = Permission::create(['name' => 'Product access']);
-        $permission = Permission::create(['name' => 'Product edit']);
-        $permission = Permission::create(['name' => 'Product create']);
-        $permission = Permission::create(['name' => 'Product delete']);
+        Permission::create(['name' => 'Product access']);
+        Permission::create(['name' => 'Product edit']);
+        Permission::create(['name' => 'Product create']);
+        Permission::create(['name' => 'Product delete']);
 
-        $permission = Permission::create(['name' => 'Category access']);
-        $permission = Permission::create(['name' => 'Category edit']);
-        $permission = Permission::create(['name' => 'Category create']);
-        $permission = Permission::create(['name' => 'Category delete']);
+        Permission::create(['name' => 'Category access']);
+        Permission::create(['name' => 'Category edit']);
+        Permission::create(['name' => 'Category create']);
+        Permission::create(['name' => 'Category delete']);
 
-        $permission = Permission::create(['name' => 'Mail access']);
-        $permission = Permission::create(['name' => 'Mail edit']);
+        Permission::create(['name' => 'ApiProduct access']);
+        Permission::create(['name' => 'ApiOrder access']);
 
 
+        Permission::create(['name' => 'Mail access']);
+        Permission::create(['name' => 'Mail edit']);
 
         $admin->assignRole($admin_role);
         $writer->assignRole($writer_role);
