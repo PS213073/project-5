@@ -30,11 +30,6 @@ class KuinApiController extends Controller
             // Parse the JSON response to retrieve product data
             $products = $response->json();
 
-            // $page = $request->get('page', 1); // Get the current page or default to 1
-            // $perPage = 15;
-
-            // $products = collect($data)->forPage($page, $perPage);
-
             // Pass the product data to the admin dashboard view
             return view('kuin.products', compact('products'));
         } else {
