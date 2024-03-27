@@ -26,8 +26,7 @@
                             @foreach ($categories as $category)
                                 <tr class="hover:bg-grey-lighter">
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $category->name }}</td>
-                                     <td class="py-4 px-6 border-b border-grey-light text-right">
-
+                                    <td class="py-4 px-6 border-b border-grey-light text-right">
                                         @can('Category edit')
                                             <a href="{{ route('admin.categories.edit', $category->id) }}"
                                                 class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark text-blue-400">Edit</a>
