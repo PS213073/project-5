@@ -38,7 +38,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data= $request->all();
+        $data = $request->all();
         $data['user_id'] = Auth::user()->id;
         Category::create($data);
         return redirect()->route('admin.categories.index')->withSuccess('Category created !!!');
@@ -57,22 +57,30 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('category.edit');
+        return view('category.edit', compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        $category->update([
+            'name' => $request->input('name'),
+        ]);
+        return redirect()->route('admin.categories.index')->withSuccess('Category updated !!!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->back()->withSuccess('Category deleted !!!');
     }
 }
