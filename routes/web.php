@@ -48,11 +48,15 @@ Route::namespace('App\Http\Controllers\Admin')->name('admin.')->prefix('admin')
         Route::resource('posts','PostController');
         Route::resource('products','ProductController');
         Route::resource('categories','CategoryController');
+
+        // Kuin API
         Route::get('kuin/products', [KuinApiController::class,'products'])->name('kuin.products');
         Route::get('kuin/product/{productId}', [KuinApiController::class,'product'])->name('kuin.product');
         Route::get('kuin/orders', [KuinApiController::class,'orders'])->name('kuin.orders');
         Route::get('kuin/orderItem/{orderId}', [KuinApiController::class,'order'])->name('kuin.order');
+        Route::post('kuin/add-product', [KuinApiController::class,'addToDatabase'])->name('kuin.add-product');
 
+        // Admin Users
         Route::resource('/profile', 'ProfileController');
         // Route::put('/profile-update',[ProfileController::class,'update'])->name('profile.update');
 

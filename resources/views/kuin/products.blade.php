@@ -18,9 +18,6 @@
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
                                 Kleur</th>
-                            {{-- <th
-                                class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
-                                Typen</th> --}}
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light text-right pr-14">
                                 Actions</th>
@@ -40,9 +37,19 @@
                                     </td>
 
                                     <td class="py-4 px-6 border-b border-grey-light text-right">
-
-                                        <a href="#"
-                                            class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark text-[#3E6553]">Toevoegen</a>
+                                        <form action="{{ route('admin.kuin.add-product')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{ $product['id'] }}">
+                                            <select name="category_id" id="category_id">
+                                                @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <input type="number" name='quantity' value="0">
+                                            <button>Toevoegen</button>
+                                    </form>
+                                        {{-- <a href="#"
+                                            class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark text-[#3E6553]">Toevoegen</a> --}}
 
                                         <a href="{{ route('admin.kuin.product', $product['id']) }}"
                                             class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark text-blue-400">Details</a>
