@@ -5,6 +5,7 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WinkelProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,7 @@ Route::middleware('auth:front')->group(function () {
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/winkel', [WinkelProductController::class, 'index'])->name('winkel');
 
 //Admin Routes
 require __DIR__ . '/auth.php';
@@ -41,26 +43,26 @@ Route::get('/admin/dashboard', function () {
 })->middleware(['auth'])->name('admin.dashboard');
 
 Route::namespace('App\Http\Controllers\Admin')->name('admin.')->prefix('admin')
-    ->group(function(){
-        Route::resource('roles','RoleController');
-        Route::resource('permissions','PermissionController');
-        Route::resource('users','UserController');
-        Route::resource('posts','PostController');
-        Route::resource('products','ProductController');
-        Route::resource('categories','CategoryController');
+    ->group(function () {
+        Route::resource('roles', 'RoleController');
+        Route::resource('permissions', 'PermissionController');
+        Route::resource('users', 'UserController');
+        Route::resource('posts', 'PostController');
+        Route::resource('products', 'ProductController');
+        Route::resource('categories', 'CategoryController');
 
         // Kuin API
-        Route::get('kuin/products', [KuinApiController::class,'products'])->name('kuin.products');
-        Route::get('kuin/product/{productId}', [KuinApiController::class,'product'])->name('kuin.product');
-        Route::get('kuin/orders', [KuinApiController::class,'orders'])->name('kuin.orders');
-        Route::get('kuin/orderItem/{orderId}', [KuinApiController::class,'order'])->name('kuin.order');
-        Route::post('kuin/add-product', [KuinApiController::class,'addToDatabase'])->name('kuin.add-product');
+        Route::get('kuin/products', [KuinApiController::class, 'products'])->name('kuin.products');
+        Route::get('kuin/product/{productId}', [KuinApiController::class, 'product'])->name('kuin.product');
+        Route::get('kuin/orders', [KuinApiController::class, 'orders'])->name('kuin.orders');
+        Route::get('kuin/orderItem/{orderId}', [KuinApiController::class, 'order'])->name('kuin.order');
+        Route::post('kuin/add-product', [KuinApiController::class, 'addToDatabase'])->name('kuin.add-product');
 
         // Admin Users
         Route::resource('/profile', 'ProfileController');
         // Route::put('/profile-update',[ProfileController::class,'update'])->name('profile.update');
 
-});
+    });
 
 
 // Fetch data from api
