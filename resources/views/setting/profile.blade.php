@@ -4,7 +4,7 @@
              <div class="container mx-auto px-6 py-8">
                  <h3 class="text-gray-700 text-3xl font-medium">Welcome : {{ auth()->user()->name }}</h3>
                    <div class="bg-white shadow-md rounded my-6 p-5">
-                         <form method="POST" action="{{ route('admin.profile.update')}}" enctype="multipart/form-data">
+                         <form method="POST" action="{{ route('admin.profile.update', $user->id)}}" enctype="multipart/form-data">
                            @csrf
                            @method('put')
                            <div class="flex flex-col space-y-2">

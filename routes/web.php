@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\KuinApiController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +25,7 @@ Route::get('/dashboard', function () {
 })->middleware(['front'])->name('dashboard');
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth:front')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -48,10 +49,17 @@ Route::namespace('App\Http\Controllers\Admin')->name('admin.')->prefix('admin')
         Route::resource('products','ProductController');
         Route::resource('categories','CategoryController');
 
-        Route::get('/profile',[ProfileController::class,'index'])->name('profile');
-        Route::put('/profile-update',[ProfileController::class,'update'])->name('profile.update');
-        // Route::get('/mail',[MailSettingController::class,'index'])->name('mail.index');
-        // Route::put('/mail-update/{mailsetting}',[MailSettingController::class,'update'])->name('mail.update');
+        // Kuin API
+        Route::get('kuin/products', [KuinApiController::class,'products'])->name('kuin.products');
+        Route::get('kuin/product/{productId}', [KuinApiController::class,'product'])->name('kuin.product');
+        Route::get('kuin/orders', [KuinApiController::class,'orders'])->name('kuin.orders');
+        Route::get('kuin/orderItem/{orderId}', [KuinApiController::class,'order'])->name('kuin.order');
+        Route::post('kuin/add-product', [KuinApiController::class,'addToDatabase'])->name('kuin.add-product');
+
+        // Admin Users
+        Route::resource('/profile', 'ProfileController');
+        // Route::put('/profile-update',[ProfileController::class,'update'])->name('profile.update');
+
 });
 
 

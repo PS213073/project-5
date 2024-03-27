@@ -18,7 +18,7 @@
                     <button type="button" @click="dropdownOpen = ! dropdownOpen"
                         class="relative block h-8 w-8 rounded-full overflow-hidden shadow focus:outline-none">
                         <img class="h-full w-full object-cover"
-                            src="/images/{{ auth()->user()->profile ?? 'user.avif' }}" alt="Your avatar">
+                            src="{{ asset('images/' . (auth()->user()->profile ?? 'user.avif')) }}" alt="Your avatar">
                     </button>
 
                     <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"
@@ -27,7 +27,7 @@
                     <div x-show="dropdownOpen"
                         class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
                         style="display: none;">
-                        <a href="{{ route('admin.profile') }}"
+                        <a href="{{ route('admin.profile.index') }}"
                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#3E6553] hover:text-white">Profile</a>
 
                         <form method="POST" action="{{ route('admin.logout') }}">
