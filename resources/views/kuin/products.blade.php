@@ -33,7 +33,6 @@
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product['name'] }}</td>
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product['price'] }}</td>
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product['color'] }}</td>
-                                    {{-- <td class="py-4 px-6 border-b border-grey-light">{{ $product->category->name }} --}}
                                     </td>
 
                                     <td class="py-4 px-6 border-b border-grey-light text-right">
