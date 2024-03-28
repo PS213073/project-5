@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->integer('quantity')->after('price');
+            $table->integer('product_id')->after('id');
         });
     }
 
@@ -23,6 +24,7 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->dropColumn('quantity');
+            $table->dropColumn('product_id');
         });
     }
 };

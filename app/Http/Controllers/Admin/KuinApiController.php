@@ -112,46 +112,59 @@ class KuinApiController extends Controller
     public function addToDatabase(Request $request)
     {
 
-        $category = $request->input('category_id');
+        $category_id = $request->input('category_id');
         $productId = $request->input('product_id');
         $quantity = $request->input('quantity');
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $this->accessToken,
-        ])->withoutVerifying()->post("https://kuin.summaict.nl/api/orderItem",[
-            "quantity"=> $quantity,
-            'product_id'=> $productId
-        ]);
-            // dd($response->body());
-        if ($response->successful()) {
-            $productResponse = Http::withHeaders([
+
+        $existingProduct = Product::where('product_id', $productId)->first();
+
+        if ($existingProduct) {
+            // dd($existingProduct);
+            $existingProduct->quantity += $quantity;
+            // dd($existingProduct);
+            $existingProduct->save();
+            return redirect()->back()->with('success', 'Quantity updated succesfully');
+        } else {
+            $response = Http::withHeaders([
                 'Authorization' => 'Bearer ' . $this->accessToken,
-            ])->withoutVerifying()->get("https://kuin.summaict.nl/api/product/{$productId}");
+            ])->withoutVerifying()->post("https://kuin.summaict.nl/api/orderItem", [
+                "quantity" => $quantity,
+                'product_id' => $productId
+            ]);
+            // dd($response->body());
+            if ($response->successful()) {
+                $productResponse = Http::withHeaders([
+                    'Authorization' => 'Bearer ' . $this->accessToken,
+                ])->withoutVerifying()->get("https://kuin.summaict.nl/api/product/{$productId}");
                 // dd($productResponse->body());
 
                 if ($productResponse->successful()) {
-                    $data = $productResponse->json();
+                    $productData = $productResponse->json();
 
-                   $product = Product::create([
-                        'product_id' => $data['id'],
-                        'name' => $data['name'],
-                        'description' => $data['description'],
-                        'price' => $data['price'],
-                        'image' => $data['image'],
-                        'color' => $data['color'],
-                        'height_cm' => $data['height_cm'],
-                        'width_cm' => $data['width_cm'],
-                        'depth_cm' => $data['depth_cm'],
-                        'weight_gr' => $data['weight_gr'],
-                        'quantity' => $quantity,
-                        'category_id' => $category,
-                        // Add any other fields from $data that you want to store
-                    ]);
 
-                    // $data->save();
+                    $product = new Product();
+                    $product->product_id = $productData['id'];
+                    $product->name = $productData['name'];
+                    $product->description = $productData['description'];
+                    $product->price = $productData['price'];
+                    $product->image = $productData['image'];
+                    $product->color = $productData['color'];
+                    $product->height_cm = $productData['height_cm'];
+                    $product->width_cm = $productData['width_cm'];
+                    $product->depth_cm = $productData['depth_cm'];
+                    $product->weight_gr = $productData['weight_gr'];
+                    $product->quantity = $quantity;
+                    $product->category_id = $category_id;
+
+                    // Save the product to your database
+                    $product->save();
                 }
-                // dd($request->all());
 
-                return back()->with('success','besteld');
+                return redirect()->back()->with('success', 'Product added to order and database successfully!');
+            } else {
+                // Handle the case where the request to add the product to the order failed
+                return redirect()->back()->with('error', 'Failed to add product to order');
+            }
         }
     }
 }
