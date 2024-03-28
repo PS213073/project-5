@@ -129,30 +129,4 @@
             // console.log('slickPrev');
         }
     });
-
-    $(document).ready(function() {
-        var $popupViews = $('.popup-view');
-        var $popupBtns = $('.popup-btn');
-        var $closeBtns = $('.close-btn');
-
-        $($popupBtns).on('click', function() {
-            $($popupViews).toggleClass('active');
-        });
-
-        $closeBtns.on("click", function() {
-            $popupViews.removeClass('active');
-        });
-    });
-
-    $('[data-toggle="modal"]').on('click', function(e) {
-        var modalImage = $(this).find('[data-content="image"]').attr('src');
-        var modalText = $(this).find('[data-content="name"]').text();
-        var modalDescription = $(this).find('[data-content="description"]').text();
-        var modalCode = $(this).find('[data-content="price"]').text();
-        $('.popup-card .image').attr('src', modalImage);
-        $('.popup-card .name').text(modalText);
-        $('.popup-card .price').text(modalCode);
-        $('.popup-card .description').text(modalDescription);
-        console.log(modalText + modalImage);
-    });
 </script>

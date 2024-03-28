@@ -1,3 +1,4 @@
+// Header Scroll
 window.addEventListener('scroll', function () {
     var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -7,37 +8,38 @@ window.addEventListener('scroll', function () {
         document.querySelector("header").classList.remove('header-active');
     }
 });
+// End header scroll
 
-/*==================== SHOW MENU ====================*/
-// const navMenu = document.getElementById('nav-menu'),
-//     navToggle = document.getElementById('nav-toggle'),
-//     navClose = document.getElementById('nav-close')
 
-/*===== MENU SHOW =====*/
-/* Validate if constant exists */
-// if (navToggle) {
-//     navToggle.addEventListener('click', () => {
-//         navMenu.classList.add('show-menu')
-//     })
-// }
+// POPUP MODAL
 
-// /*===== MENU HIDDEN =====*/
-// /* Validate if constant exists */
-// if (navClose) {
-//     navClose.addEventListener('click', () => {
-//         navMenu.classList.remove('show-menu')
-//     })
-// }
+$(document).ready(function () {
+    var $popupViews = $('.popup-view');
+    var $popupBtns = $('.popup-btn');
+    var $closeBtns = $('.close-btn');
 
-/*=============== REMOVE MENU MOBILE ===============*/
-// const navLink = document.querySelectorAll('.nav__link')
+    $($popupBtns).on('click', function () {
+        $($popupViews).toggleClass('active');
+    });
 
-// function linkAction() {
-//     const navMenu = document.getElementById('nav-menu')
-//     // When we click on each nav__link, we remove the show-menu class
-//     navMenu.classList.remove('show-menu')
-// }
-// navLink.forEach(n => n.addEventListener('click', linkAction))
+    $closeBtns.on("click", function () {
+        $popupViews.removeClass('active');
+    });
+});
+
+$('[data-toggle="modal"]').on('click', function (e) {
+    var modalImage = $(this).find('[data-content="image"]').attr('src');
+    var modalText = $(this).find('[data-content="name"]').text();
+    var modalDescription = $(this).find('[data-content="description"]').text();
+    var modalCode = $(this).find('[data-content="price"]').text();
+    $('.popup-card .image').attr('src', modalImage);
+    $('.popup-card .name').text(modalText);
+    $('.popup-card .price').text(modalCode);
+    $('.popup-card .description').text(modalDescription);
+    console.log(modalText + modalImage);
+});
+
+// End POPUP MODAL
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader() {
