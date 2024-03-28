@@ -17,7 +17,7 @@
 
 <body>
     <header class="header" id="header">
-        <nav class="nav container p-5">
+        <nav class="nav p-5">
             <a href="{{ route('index') }}" class="nav__logo">
                 <i class="ri-leaf-line nav__logo-icon"></i> GV
             </a>
