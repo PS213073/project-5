@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\Admin\KuinApiController;
 use App\Http\Controllers\ApiController;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\WinkelProductController;
+use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\WinkelProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,7 +34,7 @@ Route::middleware('auth:front')->group(function () {
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::get('/winkel', [WinkelProductController::class, 'index'])->name('winkel');
+Route::get('/winkel', [WinkelProductController::class, 'index'])->name('winkel.index');
 
 //Admin Routes
 require __DIR__ . '/auth.php';

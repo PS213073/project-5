@@ -24,7 +24,7 @@
 
             <ul class="gap-6 theme-pages">
                 <li><a href="{{ route('index') }}">Home</a></li>
-                <li><a href="{{ route('winkel') }}">Winkel</a></li>
+                <li><a href="{{ route('winkel.index') }}">Winkel</a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
                 <li><a href="">Over Ons</a></li>
             </ul>
