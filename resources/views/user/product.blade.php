@@ -1,13 +1,10 @@
 @include('front.layouts.header')
 
-
-<div class="pl-4 flex top-24 relative gap-20">
-    <a href="">Category 1</a>
-    <a href="">Category 1</a>
-    <a href="">Category 1</a>
-    <a href="">Category 1</a>
-    <a href="">Category 1</a>
-</div>
+@foreach ($categories as $category)
+    <li><a class="pl-4 flex top-24 relative gap-20 text-blue-500 hover:text-blue-800"
+            href="{{ route('winkel.index') }}?category_id={{ $category->id }}">{{ $category->name }}</a>
+    </li>
+@endforeach
 
 <div class="top-36 relative">
     <h2 class="font-medium text-3xl text-center">Winkel</h2>
@@ -112,9 +109,9 @@
             </div>
         </div>
     </div>
-    <div class="text-right p-4 py-10">
+    {{-- <div class="text-right p-4 py-10">
         {{ $products->links() }}
-    </div>
+    </div> --}}
 </section>
 
 {{-- <script>
