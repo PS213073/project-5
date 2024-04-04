@@ -35,6 +35,16 @@
                         </div><br>
 
                         <div class="flex flex-col space-y-2">
+                            <label for="color" class="text-gray-700 select-none font-medium">Type</label>
+                            <select class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                             name="category_id" id="category_id">
+                                @foreach ($categories as $category )
+                                <option value="{{ old('category', $category->id) }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div><br>
+
+                        <div class="flex flex-col space-y-2">
                             <label for="height_cm" class="text-gray-700 select-none font-medium">Hoogte_cm</label>
                             <input id="height_cm" type="number" name="height_cm"
                                 value="{{ old('height_cm', $product->height_cm) }}" placeholder="Enter height_cm"
