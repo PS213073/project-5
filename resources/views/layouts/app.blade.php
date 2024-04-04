@@ -8,6 +8,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css">
+
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -61,6 +64,26 @@
             {{ $slot }}
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#Table').DataTable({
+                responsive: true,
+                order: [
+                    [0, "desc"]
+                ],
+                layout: {
+                    // topStart: 'info',
+                    // bottomStart: null,
+                    bottom: 'paging',
+                    bottomEnd: null
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

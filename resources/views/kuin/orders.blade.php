@@ -3,7 +3,7 @@
         <div class="container mx-auto px-6 py-2">
 
             <div class="bg-white shadow-md rounded my-6">
-                <table class="text-left w-full border-collapse">
+                <table id="Table" class="text-left w-full border-collapse">
                     <thead>
                         <tr>
                             <th
@@ -30,8 +30,14 @@
                                 <tr class="hover:bg-grey-lighter">
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $order['id'] }}</td>
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $order['user_id'] }}</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">{{ $order['status'] }}</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">{{ \Carbon\Carbon::parse($order['created_at'])->format('Y-m-d') }}</td>
+                                    <td
+                                        class="py-4 px-6 border-b border-grey-light
+                                    @if ($order['status'] === 'completed') text-green-500
+                                    @elseif ($order['status'] === 'pending') text-orange-500
+                                    @elseif ($order['status'] === 'cancelled') text-red-500 @endif">
+                                        {{ $order['status'] }}</td>
+                                    <td class="py-4 px-6 border-b border-grey-light">
+                                        {{ \Carbon\Carbon::parse($order['created_at'])->format('Y-m-d') }}</td>
                                     {{-- <td class="py-4 px-6 border-b border-grey-light">{{ $product->category->name }} --}}
                                     </td>
                                     <td class="py-4 px-6 border-b border-grey-light text-right">
@@ -57,3 +63,5 @@
     </main>
     </div>
 </x-app-layout>
+
+
