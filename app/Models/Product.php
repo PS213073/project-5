@@ -20,6 +20,7 @@ class Product extends Model
         'weight_gr',
         'quantity',
         'category_id',
+        'final_price'
     ];
 
     public function category()
