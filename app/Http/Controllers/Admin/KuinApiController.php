@@ -115,6 +115,7 @@ class KuinApiController extends Controller
         $category_id = $request->input('category_id');
         $productId = $request->input('product_id');
         $quantity = $request->input('quantity');
+        $marginPercentage = $request->input('margin');
 
         $existingProduct = Product::where('product_id', $productId)->first();
 
@@ -142,6 +143,9 @@ class KuinApiController extends Controller
                     $productData = $productResponse->json();
 
 
+                    // Calculate the final price based on the base price and margin percentage
+                    $final_price = $productData['price'] * (1 +($marginPercentage / 100));
+
                     $product = new Product();
                     $product->product_id = $productData['id'];
                     $product->name = $productData['name'];
@@ -155,6 +159,9 @@ class KuinApiController extends Controller
                     $product->weight_gr = $productData['weight_gr'];
                     $product->quantity = $quantity;
                     $product->category_id = $category_id;
+                    $product->final_price = $final_price;
+
+                    // dd($product);
 
                     // Save the product to your database
                     $product->save();

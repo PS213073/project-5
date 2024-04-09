@@ -68,6 +68,20 @@
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
 
+    <style>
+        #Table th,
+        #Table td {
+            text-align: center !important;
+            border-radius: 2px
+        }
+
+        .dt-layout-row {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    </style>
+
+
     <script>
         $(document).ready(function() {
             $('#Table').DataTable({
@@ -84,6 +98,32 @@
             });
         });
     </script>
+
+    {{-- <script>
+        window.onload = function() {
+            console.log('Window loaded');
+            alert('working')
+        }
+
+        function calculateTotal(productId) {
+            var margin = document.getElementById('margin' + productId).value;
+            var price = document.getElementById('margin' + productId).dataset.price;
+
+            var totalPrice = price * (1 + margin / 100);
+            document.getElementById('total' + productId).textContent = totalPrice.toFixed(2);
+        }
+
+        document.addEventListener('input', function(event) {
+            if (event.target.matches('.margin-input')) {
+                console.log(event.target.value);
+                var productId = event.target.id.replace('margin', '');
+                calculateTotal(productId);
+            }
+        });
+    </script> --}}
+
+    @stack('scripts')
+
 </body>
 
 </html>

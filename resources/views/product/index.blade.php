@@ -10,7 +10,7 @@
             </div>
 
             <div class="bg-white shadow-md rounded my-6">
-                <table class="text-left w-full border-collapse">
+                <table id="Table" class="text-left w-full border-collapse">
                     <thead>
                         <tr>
                             <th
@@ -44,9 +44,11 @@
                                         <img class="w-20" src="{{ $product->image }}" alt="Product image">
                                     </td>
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product->name }}</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">{{ $product->price }}</td>
+                                    <td class="py-4 px-6 border-b border-grey-light">{{ $product->final_price }}</td>
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product->color }}</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">{{ $product->quantity }}</td>
+                                    <td class="py-4 px-6 border-b border-grey-light
+                                    @if ($product->quantity <= 50) text-red-500 after:content-['_▼']
+                                    @endif">{{ $product->quantity }}</td>
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product->category->name }}
                                     </td>
 
@@ -73,11 +75,11 @@
                     </tbody>
                 </table>
 
-                @can('Product access')
+                {{-- @can('Product access')
                     <div class="text-right p-4 py-10">
                         {{ $products->links() }}
                     </div>
-                @endcan
+                @endcan --}}
             </div>
 
         </div>

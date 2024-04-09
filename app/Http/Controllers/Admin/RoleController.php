@@ -101,7 +101,9 @@ class RoleController extends Controller
     {
         $role->update(['name' => $request->name]);
 
-        $permissionNames = Permission::whereIn('id', $request->permissions)->pluck('name');
+        // first check if $request->permissions is an array before passing it to the whereIn method ⬇️
+        $permissionIds = is_array($request->permissions) ? $request->permissions : [];
+        $permissionNames = Permission::whereIn('id', $permissionIds)->pluck('name');
         $role->syncPermissions($permissionNames);
 
         return redirect()->route('admin.roles.index')->withSuccess('Role updated !!!');

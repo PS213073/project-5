@@ -17,8 +17,10 @@
                 <div x-data="{ dropdownOpen: false }" class="relative">
                     <button type="button" @click="dropdownOpen = ! dropdownOpen"
                         class="relative block h-8 w-8 rounded-full overflow-hidden shadow focus:outline-none">
-                        <img class="h-full w-full object-cover"
-                            src="{{ asset('images/' . (auth()->user()->profile ?? 'user.avif')) }}" alt="Your avatar">
+                        {{-- <img class="h-full w-full object-cover"
+                            src="{{ asset('images/' . (auth()->user()->profile ?? 'user.avif')) }}" alt="Your avatar"> --}}
+                            <img class="h-full w-full object-cover"
+                             alt="image" src="{{ auth()->user()->image }}">
                     </button>
 
                     <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"
