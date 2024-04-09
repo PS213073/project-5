@@ -53,7 +53,7 @@
                         <p class="description truncate">{{ $product->description }}</p>
                     </div>
                     <div data-content="price" class="pb-4">
-                        <b class="price">&euro; {{ $product->price }}</b>
+                        <b class="price">&euro; {{ $product->final_price }}</b>
                     </div>
                     <div class="pb-4">
                         <a class="popup-btn">Meer info</a>
