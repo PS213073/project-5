@@ -85,7 +85,7 @@
                             <p class="description truncate">{{ $product->description }}</p>
                         </div>
                         <div data-content="price" class="pb-4">
-                            <b class="price">&euro; {{ $product->price }}</b>
+                            <b class="price">&euro; {{ $product->final_price }}</b>
                         </div>
                         <div class="pb-4">
                             <a class="popup-btn">Meer info</a>
@@ -113,34 +113,54 @@
         {{ $products->links() }}
     </div> --}}
 </section>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-{{-- <script>
-    $(document).ready(function() {
-        var $popupViews = $('.popup-view');
-        var $popupBtns = $('.popup-btn');
-        var $closeBtns = $('.close-btn');
-
-        $($popupBtns).on('click', function() {
-            $($popupViews).toggleClass('active');
-        });
-
-        $closeBtns.on("click", function() {
-            $popupViews.removeClass('active');
-        });
+<script>
+    $('.slider').slick({
+        infinite: true,
+        speed: 300,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        arrows: false,
+        responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
 
-    $('[data-toggle="modal"]').on('click', function(e) {
-        var modalImage = $(this).find('[data-content="image"]').attr('src');
-        var modalText = $(this).find('[data-content="name"]').text();
-        var modalDescription = $(this).find('[data-content="description"]').text();
-        var modalCode = $(this).find('[data-content="price"]').text();
-        $('.popup-card .image').attr('src', modalImage);
-        $('.popup-card .name').text(modalText);
-        $('.popup-card .price').text(modalCode);
-        $('.popup-card .description').text(modalDescription);
-        console.log(modalText + modalImage);
+    $('.slider').on('mousewheel', function(e) {
+        e.preventDefault();
+
+        if (e.originalEvent.wheelDelta < 0) {
+            $(this).slick('slickNext');
+            // console.log('slickNext');
+        } else {
+            $(this).slick('slickPrev');
+            // console.log('slickPrev');
+        }
     });
-</script> --}}
+</script>
 
 
 @include('front.layouts.footer')
