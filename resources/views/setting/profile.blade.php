@@ -8,14 +8,14 @@
                         enctype="multipart/form-data">
                         @csrf
                         @method('put')
-                        <div class="flex flex-col space-y-2">
-                            <label for="name" class="text-gray-700 select-none font-medium">User Name</label>
+                        <div class="flex flex-col space-y-2 mb-3">
+                            <label for="name" class="text-gray-700 select-none font-medium">Gebruiker Naam</label>
                             <input id="name" type="text" name="name" value="{{ old('name', $user->name) }}"
                                 placeholder="Enter name"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div>
 
-                        <div class="flex flex-col space-y-2">
+                        <div class="flex flex-col space-y-2 mb-3">
                             <label for="email" class="text-gray-700 select-none font-medium">Email</label>
                             <input id="email" type="text" name="email" value="{{ old('email', $user->email) }}"
                                 placeholder="Enter email"
@@ -44,7 +44,7 @@
                                             class="shadow-lg rounded-full max-w-full h-auto align-middle border-none w-full object-cover ml-3 mb-3">
                                         <div class="ml-5">
                                             <button type="button" class="bg-[#3b3b3b] text-[#a3aab7] p-3 rounded-md"
-                                                @click="clearPreview()">Change image</button>
+                                                @click="clearPreview()">Foto Veranderen</button>
                                         </div>
                                     </div>
 
@@ -53,7 +53,7 @@
                                             class="shadow-lg rounded-full max-w-full h-auto align-middle border-none w-full object-cover ml-3 mb-3">
                                         <div class="ml-5">
                                             <button type="button" class="bg-[#3b3b3b] text-[#a3aab7] p-3 rounded-md"
-                                                @click="clearPreview()">Change image</button>
+                                                @click="clearPreview()">Foto Veranderen</button>
                                         </div>
                                     </div>
 
@@ -63,7 +63,7 @@
 
                         <div class="text-center mt-16 mb-16">
                             <button type="submit"
-                                class="bg-blue-500 text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-blue-500 transition-colors ">Update</button>
+                                class="bg-blue-500 text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-blue-500 transition-colors ">Opslaan</button>
                         </div>
                 </div>
             </div>

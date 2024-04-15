@@ -6,28 +6,28 @@
                  <form method="POST" action="{{ route('admin.users.store')}}">
                    @csrf
                    @method('post')
-                   <div class="flex flex-col space-y-2">
+                   <div class="flex flex-col space-y-2 mb-3">
                      <label for="name" class="text-gray-700 select-none font-medium">Gebruiker Naam</label>
                      <input id="name" type="text" name="name" value="{{ old('name') }}"
                        placeholder="Enter name" class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200"
                      />
                  </div>
 
-                 <div class="flex flex-col space-y-2">
+                 <div class="flex flex-col space-y-2 mb-3">
                      <label for="email" class="text-gray-700 select-none font-medium">Email</label>
                      <input id="email" type="text" name="email" value="{{ old('email') }}"
                        placeholder="Enter email" class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200"
                      />
                  </div>
 
-                 <div class="flex flex-col space-y-2">
+                 <div class="flex flex-col space-y-2 mb-3">
                      <label for="password" class="text-gray-700 select-none font-medium">Wachtwoord</label>
                      <input id="password" type="password" name="password" value="{{ old('password') }}"
                        placeholder="Enter password" class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200"
                      />
                  </div>
 
-                 <div class="flex flex-col space-y-2">
+                 <div class="flex flex-col space-y-2 mb-3">
                      <label for="password_confirmation" class="text-gray-700 select-none font-medium">Bevestig Wachtwoord</label>
                      <input id="password_confirmation" type="password" name="password_confirmation" placeholder="Re-enter password" class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200"
                      />
