@@ -12,7 +12,7 @@
     <script src="assets/js/scrollreveal.min.js" defer></script>
     <script defer src="{{ asset('main.js') }}"></script>
     @vite('resources/css/app.css')
-    <title>Document</title>
+    <title>Groene Vingers</title>
 </head>
 
 <body>

@@ -3,7 +3,7 @@
         <div class="container mx-auto px-6 py-2">
 
             <div class="bg-white shadow-md rounded my-6">
-                <table id="Table" class="cell-border stripe">
+                <table id="products" class="cell-border stripe">
                     <thead>
                         <tr>
                             <th class="">Afbeelding</th>
@@ -96,6 +96,27 @@
                     var productId = event.target.id.replace('margin', '');
                     calculateTotal(productId);
                 }
+            });
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $('#products').DataTable({
+                    columnDefs: [{
+                        "orderable": false,
+                        "targets": [0, 4, 5, 6, 7, 8]
+                    }],
+                    responsive: true,
+                    order: [
+                        [0, "desc"]
+                    ],
+                    layout: {
+                        // topStart: 'info',
+                        // bottomStart: null,
+                        bottom: 'paging',
+                        bottomEnd: null
+                    }
+                });
             });
         </script>
     @endpush

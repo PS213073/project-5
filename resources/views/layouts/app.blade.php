@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{-- <title>{{ config('app.name', 'Groene Vingers') }}</title> --}}
+    <title>Groene Vingers - Admin</title>
 
     <!-- Datatables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css">
@@ -69,10 +70,12 @@
     <script type="text/javascript" src="https://cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
 
     <style>
-        #Table th,
-        #Table td {
+        #products th,
+        #orders th,
+        #products td,
+        #orders td {
             text-align: center !important;
-            border-radius: 2px
+            border-radius: 2px;
         }
 
         .dt-layout-row {
@@ -82,9 +85,13 @@
     </style>
 
 
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             $('#Table').DataTable({
+                columnDefs: [{
+                    "orderable": false,
+                    "targets": [0, 4, 5, 6, 7, 8]
+                }],
                 responsive: true,
                 order: [
                     [0, "desc"]
@@ -97,7 +104,7 @@
                 }
             });
         });
-    </script>
+    </script> --}}
 
     {{-- <script>
         window.onload = function() {
