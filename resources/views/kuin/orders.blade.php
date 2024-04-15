@@ -3,7 +3,7 @@
         <div class="container mx-auto px-6 py-2">
 
             <div class="bg-white shadow-md rounded my-6">
-                <table id="Table" class="cell-border stripe">
+                <table id="orders" class="cell-border stripe">
                     <thead>
                         <tr>
                             <th
@@ -61,6 +61,27 @@
         </div>
     </main>
     </div>
+
+    @push('scripts')
+        <script>
+            $(document).ready(function() {
+                $('#orders').DataTable({
+                    columnDefs: [{
+                        "orderable": false,
+                        "targets": [0,]
+                    }],
+                    responsive: true,
+                    order: [
+                        [0, "desc"]
+                    ],
+                    layout: {
+                        // topStart: 'info',
+                        // bottomStart: null,
+                        bottom: 'paging',
+                        bottomEnd: null
+                    }
+                });
+            });
+        </script>
+    @endpush
 </x-app-layout>
-
-

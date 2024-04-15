@@ -10,7 +10,7 @@
             </div>
 
             <div class="bg-white shadow-md rounded my-6">
-                <table id="Table" class="text-left w-full border-collapse">
+                <table id="products" class="text-left w-full border-collapse">
                     <thead>
                         <tr>
                             <th
@@ -25,12 +25,12 @@
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
                                 Kleur</th>
-                                <th
+                            <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
                                 Vooraad</th>
-                                <th
-                                    class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
-                                    Typen</th>
+                            <th
+                                class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
+                                Typen</th>
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light text-right pr-14">
                                 Actions</th>
@@ -46,9 +46,10 @@
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product->name }}</td>
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product->final_price }}</td>
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product->color }}</td>
-                                    <td class="py-4 px-6 border-b border-grey-light
-                                    @if ($product->quantity <= 50) text-red-500 after:content-['_▼']
-                                    @endif">{{ $product->quantity }}</td>
+                                    <td
+                                        class="py-4 px-6 border-b border-grey-light
+                                    @if ($product->quantity <= 50) text-red-500 after:content-['_▼'] @endif">
+                                        {{ $product->quantity }}</td>
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $product->category->name }}
                                     </td>
 
@@ -85,4 +86,27 @@
         </div>
     </main>
     </div>
+
+    @push('scripts')
+        <script>
+            $(document).ready(function() {
+                $('#products').DataTable({
+                    columnDefs: [{
+                        "orderable": false,
+                        "targets": [0, 6]
+                    }],
+                    responsive: true,
+                    order: [
+                        [0, "desc"]
+                    ],
+                    layout: {
+                        // topStart: 'info',
+                        // bottomStart: null,
+                        bottom: 'paging',
+                        bottomEnd: null
+                    }
+                });
+            });
+        </script>
+    @endpush
 </x-app-layout>
