@@ -8,20 +8,17 @@
                         <tr>
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
-                                Order Id</th>
-                            <th
-                                class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
-                                User Id</th>
+                                Bestelling No.</th>
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
                                 Status</th>
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">
-                                Date</th>
+                                Datum</th>
 
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light text-right pr-14">
-                                Actions</th>
+                                Acties</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,7 +26,6 @@
                             @foreach ($orders as $order)
                                 <tr class="hover:bg-grey-lighter">
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $order['id'] }}</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">{{ $order['user_id'] }}</td>
                                     <td
                                         class="py-4 px-6 border-b border-grey-light
                                     @if ($order['status'] === 'completed') text-green-500
@@ -50,12 +46,6 @@
                         @endcan
                     </tbody>
                 </table>
-
-                {{-- @can('Product access')
-                    <div class="text-right p-4 py-10">
-                        {{ $products->links() }}
-                    </div>
-                @endcan --}}
             </div>
 
         </div>
@@ -68,7 +58,7 @@
                 $('#orders').DataTable({
                     columnDefs: [{
                         "orderable": false,
-                        "targets": [0,]
+                        "targets": [0, ]
                     }],
                     responsive: true,
                     order: [
@@ -79,6 +69,20 @@
                         // bottomStart: null,
                         bottom: 'paging',
                         bottomEnd: null
+                    },
+                    language: {
+                        lengthMenu: "_MENU_ per pagina",
+                        info: "Toont _START_ tot _END_ van _TOTAL_ invoer",
+                        infoEmpty: "Toont 0 tot 0 van 0 invoer",
+                        infoFiltered: "(gefilterd van _MAX_ totale invoer)",
+                        search: "Zoeken:",
+                        zeroRecords: "Geen passende records gevonden",
+                        paginate: {
+                            first: "Eerste",
+                            last: "Laatste",
+                            next: "Volgende",
+                            previous: "Vorige"
+                        },
                     }
                 });
             });

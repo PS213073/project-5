@@ -7,7 +7,7 @@
 
                 <h3 class="text-white text-3xl font-medium">Welcome : {{ auth()->user()->name }}</h3>
 
-                <p>Role : <b>
+                <p>Rol : <b>
                         @foreach (auth()->user()->roles as $role)
                             {{ $role->name }}
                         @endforeach

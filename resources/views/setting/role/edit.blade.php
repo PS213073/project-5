@@ -7,7 +7,7 @@
                    @csrf
                    @method('put')
                  <div class="flex flex-col space-y-2">
-                   <label for="role_name" class="text-gray-700 select-none font-medium">Role Name</label>
+                   <label for="role_name" class="text-gray-700 select-none font-medium">Rol Naam</label>
                    <input
                      id="role_name"
                      type="text"
@@ -18,7 +18,7 @@
                    />
                  </div>
 
-                 <h3 class="text-xl my-4 text-gray-600">Permissions</h3>
+                 <h3 class="text-xl my-4 text-gray-600">Toestemmingen</h3>
                  <div class="grid grid-cols-3 gap-4">
                    @foreach($permissions as $permission)
                        <div class="flex flex-col justify-cente">
@@ -34,7 +34,7 @@
                    @endforeach
                  </div>
                  <div class="text-center mt-16">
-                   <button type="submit" class="bg-blue-500 text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-blue-500 transition-colors ">Update</button>
+                   <button type="submit" class="bg-blue-500 text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-blue-500 transition-colors ">Opslaan</button>
                  </div>
                </div>
 
