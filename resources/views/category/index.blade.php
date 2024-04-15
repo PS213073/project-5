@@ -4,7 +4,7 @@
             <div class="text-right">
                 @can('Category create')
                     <a href="{{ route('admin.categories.create') }}"
-                        class="bg-[#3E6553] text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-[#1e3129] transition-colors ">New
+                        class="bg-[#3E6553] text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-[#1e3129] transition-colors ">Nieuwe
                         Type</a>
                 @endcan
             </div>
@@ -18,7 +18,7 @@
                                 Naam</th>
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light text-right pr-14">
-                                Actions</th>
+                                Acties</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,7 +29,7 @@
                                     <td class="py-4 px-6 border-b border-grey-light text-right">
                                         @can('Category edit')
                                             <a href="{{ route('admin.categories.edit', $category->id) }}"
-                                                class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark text-blue-400">Edit</a>
+                                                class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark text-blue-400">Bewerking</a>
                                         @endcan
 
                                         @can('Category delete')
@@ -38,7 +38,7 @@
                                                 @csrf
                                                 @method('delete')
                                                 <button
-                                                    class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark text-red-400">Delete</button>
+                                                    class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark text-red-400">Verwijderen</button>
                                             </form>
                                         @endcan
                                     </td>
@@ -47,14 +47,7 @@
                         @endcan
                     </tbody>
                 </table>
-
-                {{-- @can('Category access')
-                    <div class="text-right p-4 py-10">
-                        {{ $categories->links() }}
-                    </div>
-                @endcan --}}
             </div>
-
         </div>
     </main>
     </div>

@@ -21,10 +21,11 @@
 
             <span class="mx-3">Dashboard</span>
         </a>
-        <li class="pt-6">
-            <p>LAYOUTS & PAGES</p>
-        </li>
+
         @canany(['User access', 'User create', 'User edit', 'User delete'])
+            <li class="pt-6">
+                <p>BEHEREN</p>
+            </li>
             <a class="flex items-center mt-4 py-2 pr-6 text-white hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Route::currentRouteNamed('admin.users.index') ? 'active' : '' }}"
                 href="{{ route('admin.users.index') }}">
                 <span class="inline-flex justify-center items-center">
@@ -47,7 +48,7 @@
                         d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
                     </path>
                 </svg>
-                <span class="mx-3">Role</span>
+                <span class="mx-3">Rol</span>
             </a>
         @endcanany
         @canany(['Permission access', 'Permission create', 'Permission edit', 'Permission delete'])
@@ -60,16 +61,16 @@
                     </path>
                 </svg>
 
-                <span class="mx-3">Permission</span>
+                <span class="mx-3">Toestemming</span>
             </a>
         @endcanany
-        <li class="pt-6">
-            <a herf="#" class="nav-link">
-                <i class="bi bi-window-sidebar nav-icon me-2"></i>
-                <p>PRODUCTEN</p>
-            </a>
-        </li>
         @canany(['Product access', 'Product create', 'Product edit', 'Product delete'])
+            <li class="pt-6">
+                <a herf="#" class="nav-link">
+                    <i class="bi bi-window-sidebar nav-icon me-2"></i>
+                    <p>PRODUCTEN</p>
+                </a>
+            </li>
             <a class="flex items-center mt-4 py-2 pr-6 text-white hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Route::currentRouteNamed('admin.permissions.index') ? 'active' : '' }}"
                 href="{{ route('admin.products.index') }}">
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -94,13 +95,13 @@
                 <span class="mx-3">Typen</span>
             </a>
         @endcanany
+        @canany(['ApiProduct access'])
         <li class="pt-6">
             <a herf="#" class="nav-link">
                 <i class="bi bi-window-sidebar nav-icon me-2"></i>
                 <p>Kuin</p>
             </a>
         </li>
-        @canany(['ApiProduct access'])
             <a class="flex items-center mt-4 py-2 pr-6 text-white hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Route::currentRouteNamed('admin.roles.index') ? 'active' : '' }}"
                 href="{{ route('admin.kuin.products') }}">
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -121,7 +122,7 @@
                         d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11.0026 16L6.75999 11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z">
                     </path>
                 </svg>
-                <span class="mx-3">Orders</span>
+                <span class="mx-3">Bestellingen</span>
             </a>
         @endcanany
     </ul>

@@ -4,7 +4,7 @@
             <div class="text-right">
                 @can('Product create')
                     <a href="{{ route('admin.products.create') }}"
-                        class="bg-[#3E6553] text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-[#1e3129] transition-colors ">New
+                        class="bg-[#3E6553] text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-[#1e3129] transition-colors ">Nieuwe
                         product</a>
                 @endcan
             </div>
@@ -33,7 +33,7 @@
                                 Typen</th>
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light text-right pr-14">
-                                Actions</th>
+                                Acties</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,7 +57,7 @@
 
                                         @can('Product edit')
                                             <a href="{{ route('admin.products.edit', $product->id) }}"
-                                                class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark text-blue-400">Edit</a>
+                                                class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark text-blue-400">Bewerking</a>
                                         @endcan
 
                                         @can('Product delete')
@@ -66,7 +66,7 @@
                                                 @csrf
                                                 @method('delete')
                                                 <button
-                                                    class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark text-red-400">Delete</button>
+                                                    class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark text-red-400">Verwijderen</button>
                                             </form>
                                         @endcan
                                     </td>
@@ -75,12 +75,6 @@
                         @endcan
                     </tbody>
                 </table>
-
-                {{-- @can('Product access')
-                    <div class="text-right p-4 py-10">
-                        {{ $products->links() }}
-                    </div>
-                @endcan --}}
             </div>
 
         </div>
@@ -104,6 +98,20 @@
                         // bottomStart: null,
                         bottom: 'paging',
                         bottomEnd: null
+                    },
+                    language: {
+                        lengthMenu: "_MENU_ per pagina",
+                        info: "Toont _START_ tot _END_ van _TOTAL_ invoer",
+                        infoEmpty: "Toont 0 tot 0 van 0 invoer",
+                        infoFiltered: "(gefilterd van _MAX_ totale invoer)",
+                        search: "Zoeken:",
+                        zeroRecords: "Geen passende records gevonden",
+                        paginate: {
+                            first: "Eerste",
+                            last: "Laatste",
+                            next: "Volgende",
+                            previous: "Vorige"
+                        },
                     }
                 });
             });

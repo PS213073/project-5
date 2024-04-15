@@ -14,7 +14,7 @@
                             <th class="">Type</th>
                             <th class="">Aantal</th>
                             <th title="winst margin" class="">W-Margin%</th>
-                            <th class="">Actions</th>
+                            <th class="">Acties</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -115,6 +115,20 @@
                         // bottomStart: null,
                         bottom: 'paging',
                         bottomEnd: null
+                    },
+                    language: {
+                        lengthMenu: "_MENU_ per pagina",
+                        info: "Toont _START_ tot _END_ van _TOTAL_ invoer",
+                        infoEmpty: "Toont 0 tot 0 van 0 invoer",
+                        infoFiltered: "(gefilterd van _MAX_ totale invoer)",
+                        search: "Zoeken:",
+                        zeroRecords: "Geen passende records gevonden",
+                        paginate: {
+                            first: "Eerste",
+                            last: "Laatste",
+                            next: "Volgende",
+                            previous: "Vorige"
+                        },
                     }
                 });
             });

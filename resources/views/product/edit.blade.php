@@ -21,7 +21,7 @@
                         </div><br>
 
                         <div class="flex flex-col space-y-2">
-                            <label for="price" class="text-gray-700 select-none font-medium">Inkoop Price</label>
+                            <label for="price" class="text-gray-700 select-none font-medium">Inkoop Prijs</label>
                             <input id="price" type="number" name="old_price" disabled
                                 value="{{ old('price', $product->price) }}" placeholder="Enter price"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200 text-black" />
@@ -35,7 +35,7 @@
                         </div><br>
 
                         <div class="flex flex-col space-y-2">
-                            <label for="price" class="text-gray-700 select-none font-medium">Verkoop Price</label>
+                            <label for="price" class="text-gray-700 select-none font-medium">Verkoop Prijs</label>
                             <input id="total{{ $product->id }}" type="number" name="price"
                                 value="{{ old('price', $product->final_price) }}" placeholder="Enter price"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
@@ -88,7 +88,7 @@
                         </div><br>
                         <div class="text-center mt-16 mb-16">
                             <button type="submit"
-                                class="bg-blue-500 text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-blue-500 transition-colors ">Submit</button>
+                                class="bg-blue-500 text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-blue-500 transition-colors ">Opslaan</button>
                         </div>
                 </div>
             </div>
@@ -99,11 +99,6 @@
 
     @push('scripts')
         <script>
-            // window.onload = function() {
-            //     console.log('Window loaded');
-            //     alert('working')
-            // }
-
             function calculateTotal(productId) {
                 var margin = document.getElementById('margin' + productId).value;
                 var price = document.getElementById('margin' + productId).dataset.price;
