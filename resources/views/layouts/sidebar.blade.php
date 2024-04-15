@@ -1,5 +1,5 @@
 <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-    class="flex flex-col fixed z-30 inset-y-0 left-0 w-60 transition duration-300 transform bg-[#3E6553] overflow-y-auto lg:translate-x-0 lg:static lg:inset-0 items-center py-6">
+    class="flex flex-col fixed z-30 inset-y-0 left-0 w-60 transition duration-300 transform bg-[#3E6553] overflow-y-auto lg:translate-x-0 lg:static lg:inset-0 items-center py-6 scrollbar-thin scrollbar-thumb-sky-700">
     <div class="sidebar__profiel">
         <a href="{{ route('admin.dashboard') }}">
             <span class="text-white text-2xl mx-2 font-semibold">Dashboard</span>
