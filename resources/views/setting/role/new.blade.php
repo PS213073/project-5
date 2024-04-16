@@ -9,6 +9,7 @@
                         <div class="flex flex-col space-y-2">
                             <label for="role_name" class="text-gray-700 select-none font-medium">Rol Naam</label>
                             <input id="role_name" type="text" name="name" value="{{ old('name') }}"
+                                placeholder="rol invoeren"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div>
 

@@ -9,13 +9,13 @@
                         <div class="flex flex-col space-y-2">
                             <label for="title" class="text-gray-700 select-none font-medium">Naam</label>
                             <input id="title" type="text" name="title" value="{{ old('title', $product->name) }}"
-                                placeholder="Enter title"
+                                placeholder="naam invoeren"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div><br>
 
                         <div class="flex flex-col space-y-2">
                             <label for="description" class="text-gray-700 select-none font-medium">Beschrijving</label>
-                            <textarea name="description" id="description" placeholder="Enter description"
+                            <textarea name="description" id="description" placeholder="beschrijving invoeren"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200"
                                 rows="5">{{ old('description', $product->description) }}</textarea>
                         </div><br>
@@ -23,7 +23,7 @@
                         <div class="flex flex-col space-y-2">
                             <label for="price" class="text-gray-700 select-none font-medium">Inkoop Prijs</label>
                             <input id="price" type="number" name="old_price" disabled
-                                value="{{ old('price', $product->price) }}" placeholder="Enter price"
+                                value="{{ old('price', $product->price) }}" placeholder="prijs invoeren"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200 text-black" />
                         </div><br>
 
@@ -37,14 +37,14 @@
                         <div class="flex flex-col space-y-2">
                             <label for="price" class="text-gray-700 select-none font-medium">Verkoop Prijs</label>
                             <input id="total{{ $product->id }}" type="number" name="price"
-                                value="{{ old('price', $product->final_price) }}" placeholder="Enter price"
+                                value="{{ old('price', $product->final_price) }}" placeholder="prijs invoeren"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div><br>
 
                         <div class="flex flex-col space-y-2">
                             <label for="color" class="text-gray-700 select-none font-medium">Kleur</label>
                             <input id="color" type="text" name="color"
-                                value="{{ old('color', $product->color) }}" placeholder="Enter color"
+                                value="{{ old('color', $product->color) }}" placeholder="kleur invoeren"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div><br>
 
@@ -62,28 +62,28 @@
                         <div class="flex flex-col space-y-2">
                             <label for="height_cm" class="text-gray-700 select-none font-medium">Hoogte cm</label>
                             <input id="height_cm" type="number" name="height_cm"
-                                value="{{ old('height_cm', $product->height_cm) }}" placeholder="Enter height_cm"
+                                value="{{ old('height_cm', $product->height_cm) }}" placeholder="hoogte invoeren"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div><br>
 
                         <div class="flex flex-col space-y-2">
                             <label for="width_cm" class="text-gray-700 select-none font-medium">Breedte cm</label>
                             <input id="width_cm" type="number" name="width_cm"
-                                value="{{ old('width_cm', $product->width_cm) }}" placeholder="Enter width_cm"
+                                value="{{ old('width_cm', $product->width_cm) }}" placeholder="breedte invoeren"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div><br>
 
                         <div class="flex flex-col space-y-2">
                             <label for="depth_cm" class="text-gray-700 select-none font-medium">Diepte cm</label>
                             <input id="depth_cm" type="number" name="depth_cm"
-                                value="{{ old('depth_cm', $product->depth_cm) }}" placeholder="Enter depth_cm"
+                                value="{{ old('depth_cm', $product->depth_cm) }}" placeholder="diepte invoeren"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div><br>
 
                         <div class="flex flex-col space-y-2">
                             <label for="weight_gr" class="text-gray-700 select-none font-medium">Gewicht gr</label>
                             <input id="weight_gr" type="number" name="weight_gr"
-                                value="{{ old('weight_gr', $product->weight_gr) }}" placeholder="Enter weight_gr"
+                                value="{{ old('weight_gr', $product->weight_gr) }}" placeholder="gewicht invoeren"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div><br>
                         <div class="text-center mt-16 mb-16">
