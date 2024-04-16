@@ -118,8 +118,8 @@
                     },
                     language: {
                         lengthMenu: "_MENU_ per pagina",
-                        info: "Toont _START_ tot _END_ van _TOTAL_ invoer",
-                        infoEmpty: "Toont 0 tot 0 van 0 invoer",
+                        info: "Toont _START_ tot _END_ van _TOTAL_",
+                        infoEmpty: "Toont 0 tot 0 van 0",
                         infoFiltered: "(gefilterd van _MAX_ totale invoer)",
                         search: "Zoeken:",
                         zeroRecords: "Geen passende records gevonden",
