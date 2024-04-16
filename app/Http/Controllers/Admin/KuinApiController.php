@@ -15,8 +15,8 @@ class KuinApiController extends Controller
     // private constructor function
     function __construct()
     {
-        $this->middleware('role_or_permission:ApiProduct access');
-        $this->middleware('role_or_permission:ApiOrder access');
+        $this->middleware('role_or_permission:ApiProducten toegang');
+        $this->middleware('role_or_permission:ApiBestellingen toegang');
         $this->accessToken = '54|j4XGUDiqPxCsnC2RiCZimkim0TwHPJ5KYk9XYY6B';
     }
 

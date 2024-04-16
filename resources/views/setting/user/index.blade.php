@@ -3,7 +3,7 @@
          <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
              <div class="container mx-auto px-6 py-2">
                  <div class="text-right">
-                   @can('User create')
+                   @can('Gebruiler maken')
                      <a href="{{route('admin.users.create')}}" class="bg-[#3E6553] text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-[#1e3129] transition-colors ">Nieuw Gebruiker</a>
                    @endcan
                  </div>
@@ -19,7 +19,7 @@
                    </thead>
                    <tbody>
 
-                     @can('User access')
+                     @can('Toegang tot gebruikers')
                        @foreach($users as $user)
                        <tr class="hover:bg-grey-lighter">
                          <td class="py-4 px-6 border-b border-grey-light">{{ $user->name }}</td>
@@ -29,11 +29,11 @@
                              @endforeach
                          </td>
                          <td class="py-4 px-6 border-b border-grey-light text-right">
-                           @can('User edit')
+                           @can('Gebruiker bewerken')
                            <a href="{{route('admin.users.edit',$user->id)}}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark text-blue-400">Bewerking</a>
                            @endcan
 
-                           @can('User delete')
+                           @can('Gebruiker verwijderen')
                            <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="inline">
                                @csrf
                                @method('delete')

@@ -9,14 +9,14 @@
                  <table class="text-left w-full border-collapse">
                    <thead>
                      <tr>
-                       <th class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">Toestemming Name</th>
+                       <th class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light">Toestemming Naam</th>
 
                        <th class="py-4 px-6 bg-grey-lightest font-bold text-sm text-grey-dark border-b border-grey-light text-right"></th>
                      </tr>
                    </thead>
                    <tbody>
 
-                     @can('Permission access')
+                     @can('Toegang tot toestemmingen')
                        @foreach($permissions as $permission)
                        <tr class="hover:bg-grey-lighter">
                          <td class="py-4 px-6 border-b border-grey-light">{{ $permission->name }}</td>
