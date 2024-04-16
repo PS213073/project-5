@@ -6,12 +6,13 @@
         @csrf
 
         <div class="p-4 px-5">
-            <a href="/">
+            <a href="/" class="flex items-center">
                 <x-application-logo class="w-20 h-1 fill-current" />
+                <h1 class="text-4xl font-semibold">GV</h1>
             </a>
             <!-- Email Address -->
             <div class="mt-5">
-                <x-input-label for="text" class="mb-6 text-lg" :value="__('Voer uw gebruikersgegevens in.')" />
+                <x-input-label for="text" class="mb-3 text-lg" :value="__('Voer uw gebruikersgegevens in.')" />
                 <x-input-label for="email" class="mb-2" :value="__('E-mail')" />
                 <x-text-input id="email"
                     class="block w-full px-4 py-2 text-sm font-normal leading-5 text-gray-600 bg-white border  rounded-md appearance-none focus:outline-none focus:ring transition duration-150 ease-in-out"
@@ -41,32 +42,26 @@
                 </label>
             </div>
 
-            <x-primary-button class="ms-3 mt-6 w-full">
-                <div class="text-center">
-                    {{ __('Inloggen') }}
-                </div>
+            <x-primary-button class="mt-6 uppercase w-full">
+                {{ __('Inloggen') }}
             </x-primary-button>
+            <div class="flex gap-16">
+                <div class="flex justify-start mt-4">
+                    @if (Route::has('password.request'))
+                        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            href="{{ route('password.request') }}">
+                            {{ __('Wachtwoord vergeten?') }}
+                        </a>
+                    @endif
+                </div>
 
-            <div class="flex items-center justify-start mt-4">
-                @if (Route::has('password.request'))
+                <div class="flex justify-end mt-4">
+
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        href="{{ route('password.request') }}">
-                        {{ __('Wachtwoord vergeten?') }}
+                        href="{{ route('register') }}">
+                        {{ __('Account aanmaken') }}
                     </a>
-                @endif
-
-
-            </div>
-
-            <div class="flex items-center justify-start mt-4">
-
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    href="{{ route('register') }}">
-                    {{ __('Account aanmaken') }}
-                </a>
-
-
-
+                </div>
             </div>
         </div>
     </form>
