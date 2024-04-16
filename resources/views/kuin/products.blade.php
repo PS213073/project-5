@@ -18,7 +18,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @can('ApiProduct access')
+                        @can('ApiProducten toegang')
                             @foreach ($products as $product)
                                 <tr class="hover:bg-grey-lighter">
                                     <td class="">

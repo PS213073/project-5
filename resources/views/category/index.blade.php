@@ -2,7 +2,7 @@
     <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
         <div class="container mx-auto px-6 py-2">
             <div class="text-right">
-                @can('Category create')
+                @can('Type maken')
                     <a href="{{ route('admin.categories.create') }}"
                         class="bg-[#3E6553] text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-[#1e3129] transition-colors ">Nieuwe
                         Type</a>
@@ -22,17 +22,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @can('Category access')
+                        @can('Toegang tot typen')
                             @foreach ($categories as $category)
                                 <tr class="hover:bg-grey-lighter">
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $category->name }}</td>
                                     <td class="py-4 px-6 border-b border-grey-light text-right">
-                                        @can('Category edit')
+                                        @can('Type bewerken')
                                             <a href="{{ route('admin.categories.edit', $category->id) }}"
                                                 class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark text-blue-400">Bewerking</a>
                                         @endcan
 
-                                        @can('Category delete')
+                                        @can('Type verwijderen')
                                             <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST"
                                                 class="inline">
                                                 @csrf

@@ -22,9 +22,9 @@
             <span class="mx-3">Dashboard</span>
         </a>
 
-        @canany(['User access', 'User create', 'User edit', 'User delete'])
+        @canany(['Toegang tot gebruikers', 'Gebruiler maken', 'Gebruiler bewerken', 'Gebruiler verwijderen'])
             <li class="pt-6">
-                <p>BEHEREN</p>
+                <p>MEDEWERKERS BEHEREN</p>
             </li>
             <a class="flex items-center mt-4 py-2 pr-6 text-white hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Route::currentRouteNamed('admin.users.index') ? 'active' : '' }}"
                 href="{{ route('admin.users.index') }}">
@@ -39,7 +39,7 @@
                 <span class="mx-3">Medewerkers</span>
             </a>
         @endcanany
-        @canany(['Role access', 'Role create', 'Role edit', 'Role delete'])
+        @canany(['Toegang tot rollen', 'Rol maken', 'Rol bewerken', 'Rol verwijderen'])
             <a class="flex items-center mt-4 py-2 pr-6 text-white hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Route::currentRouteNamed('admin.roles.index') ? 'active' : '' }}"
                 href="{{ route('admin.roles.index') }}">
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -51,7 +51,7 @@
                 <span class="mx-3">Rol</span>
             </a>
         @endcanany
-        @canany(['Permission access', 'Permission create', 'Permission edit', 'Permission delete'])
+        @canany(['Toegang tot toestemmingen'])
             <a class="flex items-center mt-4 py-2 pr-6 text-white hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Route::currentRouteNamed('admin.permissions.index') ? 'active' : '' }}"
                 href="{{ route('admin.permissions.index') }}">
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -64,7 +64,7 @@
                 <span class="mx-3">Toestemming</span>
             </a>
         @endcanany
-        @canany(['Product access', 'Product create', 'Product edit', 'Product delete'])
+        @canany(['Toegang tot producten', 'Product maken', 'Product bewerken', 'Product verwijderen'])
             <li class="pt-6">
                 <a herf="#" class="nav-link">
                     <i class="bi bi-window-sidebar nav-icon me-2"></i>
@@ -83,7 +83,7 @@
                 <span class="mx-3">Producten</span>
             </a>
         @endcanany
-        @canany(['Category access', 'Category create', 'Category edit', 'Category delete'])
+        @canany(['Toegang tot type', 'Type maken', 'Type bewerken', 'Type verwijderen'])
             <a class="flex items-center mt-4 py-2 pr-6 text-white hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Route::currentRouteNamed('admin.roles.index') ? 'active' : '' }}"
                 href="{{ route('admin.categories.index') }}">
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -95,13 +95,13 @@
                 <span class="mx-3">Typen</span>
             </a>
         @endcanany
-        @canany(['ApiProduct access'])
-        <li class="pt-6">
-            <a herf="#" class="nav-link">
-                <i class="bi bi-window-sidebar nav-icon me-2"></i>
-                <p>Kuin</p>
-            </a>
-        </li>
+        @canany(['ApiProducten toegang'])
+            <li class="pt-6">
+                <a herf="#" class="nav-link">
+                    <i class="bi bi-window-sidebar nav-icon me-2"></i>
+                    <p>Kuin</p>
+                </a>
+            </li>
             <a class="flex items-center mt-4 py-2 pr-6 text-white hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Route::currentRouteNamed('admin.roles.index') ? 'active' : '' }}"
                 href="{{ route('admin.kuin.products') }}">
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -113,7 +113,7 @@
                 <span class="mx-3">Bestellen</span>
             </a>
         @endcanany
-        @canany(['ApiOrder access'])
+        @canany(['ApiBestellingen toegang'])
             <a class="flex items-center mt-4 py-2 pr-6 text-white hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Route::currentRouteNamed('admin.roles.index') ? 'active' : '' }}"
                 href="{{ route('admin.kuin.orders') }}">
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">

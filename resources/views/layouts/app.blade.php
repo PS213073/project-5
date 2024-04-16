@@ -83,52 +83,6 @@
             padding-right: 5px;
         }
     </style>
-
-
-    {{-- <script>
-        $(document).ready(function() {
-            $('#Table').DataTable({
-                columnDefs: [{
-                    "orderable": false,
-                    "targets": [0, 4, 5, 6, 7, 8]
-                }],
-                responsive: true,
-                order: [
-                    [0, "desc"]
-                ],
-                layout: {
-                    // topStart: 'info',
-                    // bottomStart: null,
-                    bottom: 'paging',
-                    bottomEnd: null
-                }
-            });
-        });
-    </script> --}}
-
-    {{-- <script>
-        window.onload = function() {
-            console.log('Window loaded');
-            alert('working')
-        }
-
-        function calculateTotal(productId) {
-            var margin = document.getElementById('margin' + productId).value;
-            var price = document.getElementById('margin' + productId).dataset.price;
-
-            var totalPrice = price * (1 + margin / 100);
-            document.getElementById('total' + productId).textContent = totalPrice.toFixed(2);
-        }
-
-        document.addEventListener('input', function(event) {
-            if (event.target.matches('.margin-input')) {
-                console.log(event.target.value);
-                var productId = event.target.id.replace('margin', '');
-                calculateTotal(productId);
-            }
-        });
-    </script> --}}
-
     @stack('scripts')
 
 </body>

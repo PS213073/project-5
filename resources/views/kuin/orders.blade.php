@@ -22,7 +22,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @can('ApiOrder access')
+                        @can('ApiBestellingen toegang')
                             @foreach ($orders as $order)
                                 <tr class="hover:bg-grey-lighter">
                                     <td class="py-4 px-6 border-b border-grey-light">{{ $order['id'] }}</td>

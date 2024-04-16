@@ -12,9 +12,10 @@ class CategoryController extends Controller
 
     function __construct()
     {
-        $this->middleware('role_or_permission:Product access|Product edit|Product delete', ['only' => ['index', 'show']]);
-        $this->middleware('role_or_permission:Product edit', ['only' => ['edit', 'update']]);
-        $this->middleware('role_or_permission:Product delete', ['only' => ['destroy']]);
+        $this->middleware('role_or_permission:Toegang tot typen|Type maken|Type bewerken|Type verwijderen', ['only' => ['index', 'show']]);
+        $this->middleware('role_or_permission:Type maken', ['only' => ['create', 'store']]);
+        $this->middleware('role_or_permission:Type bewerken', ['only' => ['edit', 'update']]);
+        $this->middleware('role_or_permission:Type verwijderen', ['only' => ['destroy']]);
     }
     /**
      * Display a listing of the resource.
