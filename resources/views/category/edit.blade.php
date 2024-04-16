@@ -9,7 +9,7 @@
                         <div class="flex flex-col space-y-2">
                             <label for="name" class="text-gray-700 select-none font-medium">Naam</label>
                             <input id="name" type="text" name="name" value="{{ old('name', $category->name) }}"
-                                placeholder="Enter naam"
+                                placeholder="naam invoeren"
                                 class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" />
                         </div><br>
                         <div class="text-center mt-16 mb-16">

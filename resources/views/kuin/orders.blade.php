@@ -58,7 +58,7 @@
                 $('#orders').DataTable({
                     columnDefs: [{
                         "orderable": false,
-                        "targets": [0, ]
+                        "targets": [0, 3]
                     }],
                     responsive: true,
                     order: [

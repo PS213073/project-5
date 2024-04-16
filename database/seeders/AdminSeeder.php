@@ -32,33 +32,33 @@ class AdminSeeder extends Seeder
         $admin_role = Role::create(['name' => 'admin']);
         $manager_role = Role::create(['name' => 'manager']);
 
-        Permission::create(['name' => 'Role access']);
-        Permission::create(['name' => 'Role edit']);
-        Permission::create(['name' => 'Role create']);
-        Permission::create(['name' => 'Role delete']);
+        Permission::create(['name' => 'Toegang tot rollen']);
+        Permission::create(['name' => 'Rol bewerken']);
+        Permission::create(['name' => 'Rol maken']);
+        Permission::create(['name' => 'Rol verwijderen']);
 
-        Permission::create(['name' => 'User access']);
-        Permission::create(['name' => 'User edit']);
-        Permission::create(['name' => 'User create']);
-        Permission::create(['name' => 'User delete']);
+        Permission::create(['name' => 'Toegang tot gebruikers']);
+        Permission::create(['name' => 'Gebruiker bewerken']);
+        Permission::create(['name' => 'Gebruiker maken']);
+        Permission::create(['name' => 'Gebruiker verwijderen']);
 
-        Permission::create(['name' => 'Permission access']);
-        Permission::create(['name' => 'Permission edit']);
-        Permission::create(['name' => 'Permission create']);
-        Permission::create(['name' => 'Permission delete']);
+        Permission::create(['name' => 'Toegang tot toestemmingen']);
+        Permission::create(['name' => 'Toestemming bewerken']);
+        Permission::create(['name' => 'Toestemming maken']);
+        Permission::create(['name' => 'Toestemming verwijderen']);
 
-        Permission::create(['name' => 'Product access']);
-        Permission::create(['name' => 'Product edit']);
-        Permission::create(['name' => 'Product create']);
-        Permission::create(['name' => 'Product delete']);
+        Permission::create(['name' => 'Toegang tot producten']);
+        Permission::create(['name' => 'Product bewerken']);
+        Permission::create(['name' => 'Product maken']);
+        Permission::create(['name' => 'Product verwijderen']);
 
-        Permission::create(['name' => 'Category access']);
-        Permission::create(['name' => 'Category edit']);
-        Permission::create(['name' => 'Category create']);
-        Permission::create(['name' => 'Category delete']);
+        Permission::create(['name' => 'Toegang tot typen']);
+        Permission::create(['name' => 'Type bewerken']);
+        Permission::create(['name' => 'Type maken']);
+        Permission::create(['name' => 'Type verwijderen']);
 
-        Permission::create(['name' => 'ApiProduct access']);
-        Permission::create(['name' => 'ApiOrder access']);
+        Permission::create(['name' => 'ApiProducten toegang']);
+        Permission::create(['name' => 'ApiBestellingen toegang']);
 
 
         // Permission::create(['name' => 'Mail access']);
