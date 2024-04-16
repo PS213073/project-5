@@ -3,7 +3,7 @@
          <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
              <div class="container mx-auto px-6 py-2">
                  <div class="text-right">
-                   @can('Gebruiler maken')
+                   @can('Gebruiker maken')
                      <a href="{{route('admin.users.create')}}" class="bg-[#3E6553] text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-[#1e3129] transition-colors ">Nieuw Gebruiker</a>
                    @endcan
                  </div>

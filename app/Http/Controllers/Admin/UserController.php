@@ -21,10 +21,10 @@ class UserController extends Controller
      */
     function __construct()
     {
-        $this->middleware('role_or_permission:Toegang tot gebruikers|Gebruiler maken|Gebruiler bewerken|Gebruiler verwijderen', ['only' => ['index', 'show']]);
-        $this->middleware('role_or_permission:Gebruiler maken', ['only' => ['create', 'store']]);
-        $this->middleware('role_or_permission:Gebruiler bewerken', ['only' => ['edit', 'update']]);
-        $this->middleware('role_or_permission:Gebruiler verwijderen', ['only' => ['destroy']]);
+        $this->middleware('role_or_permission:Toegang tot gebruikers|Gebruiker maken|Gebruiker bewerken|Gebruiker verwijderen', ['only' => ['index', 'show']]);
+        $this->middleware('role_or_permission:Gebruiker maken', ['only' => ['create', 'store']]);
+        $this->middleware('role_or_permission:Gebruiker bewerken', ['only' => ['edit', 'update']]);
+        $this->middleware('role_or_permission:Gebruiker verwijderen', ['only' => ['destroy']]);
     }
 
     /**
