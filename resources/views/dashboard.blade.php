@@ -5,7 +5,7 @@
                 class="flex flex-col justify-center items-center container mx-auto md:container md:mx-[0%] md:w-full px-6 py-8 bg-[#3E6553] ">
 
 
-                <h3 class="text-white text-3xl font-medium">Welcome : {{ auth()->user()->name }}</h3>
+                <h3 class="text-white text-3xl font-medium">Welkom : {{ auth()->user()->name }}</h3>
 
                 <p>Rol : <b>
                         @foreach (auth()->user()->roles as $role)
