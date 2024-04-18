@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\KuinApiController;
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Front\HomeController;
@@ -27,9 +27,9 @@ Route::get('/dashboard', function () {
 
 
 Route::middleware('auth:front')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('front.profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('front.profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('front.profile.destroy');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -47,7 +47,7 @@ Route::namespace('App\Http\Controllers\Admin')->name('admin.')->prefix('admin')
         Route::resource('roles', 'RoleController');
         Route::resource('permissions', 'PermissionController');
         Route::resource('users', 'UserController');
-        Route::resource('posts', 'PostController');
+        // Route::resource('posts', 'PostController');
         Route::resource('products', 'ProductController');
         Route::resource('categories', 'CategoryController');
 
@@ -59,11 +59,11 @@ Route::namespace('App\Http\Controllers\Admin')->name('admin.')->prefix('admin')
         Route::post('kuin/add-product', [KuinApiController::class, 'addToDatabase'])->name('kuin.add-product');
 
         // Admin Users
-        Route::resource('/profile', 'ProfileController');
+        Route::resource('/profile', AdminProfileController::class);
         // Route::put('/profile-update',[ProfileController::class,'update'])->name('profile.update');
 
     });
 
 
 // Fetch data from api
-Route::get('/fetchapi', [ApiController::class, 'fetchPlantsFromExternalApi']);
+// Route::get('/fetchapi', [ApiController::class, 'fetchPlantsFromExternalApi']);
