@@ -28,6 +28,7 @@
         <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false"
             class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
 
+        
         @include('layouts.sidebar')
 
 

@@ -12,7 +12,7 @@ use App\Http\Requests\ProfileUpdateRequest;
 use App\Traits\FileUploadTrait;
 use Illuminate\Contracts\View\View;
 
-class ProfileController extends Controller
+class AdminProfileController extends Controller
 {
     use FileUploadTrait;
 
