@@ -64,6 +64,18 @@
                 <span class="mx-3">Toestemming</span>
             </a>
         @endcanany
+        @canany(['Toegang tot ploegendiensten'])
+            <a class="flex items-center mt-4 py-2 pr-6 text-white hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Route::currentRouteNamed('admin.shifts.index') ? 'active' : '' }}"
+                href="{{ route('admin.shifts.index') }}">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                        d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM8 14V16H6V14H8ZM18 14V16H10V14H18ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z">
+                    </path>
+                </svg>
+                <span class="mx-3">Ploegendienst</span>
+            </a>
+        @endcanany
         @canany(['Toegang tot producten', 'Product maken', 'Product bewerken', 'Product verwijderen'])
             <li class="pt-6">
                 <a herf="#" class="nav-link">
@@ -83,7 +95,7 @@
                 <span class="mx-3">Producten</span>
             </a>
         @endcanany
-        @canany(['Toegang tot type', 'Type maken', 'Type bewerken', 'Type verwijderen'])
+        @canany(['Toegang tot typen', 'Type maken', 'Type bewerken', 'Type verwijderen'])
             <a class="flex items-center mt-4 py-2 pr-6 text-white hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Route::currentRouteNamed('admin.roles.index') ? 'active' : '' }}"
                 href="{{ route('admin.categories.index') }}">
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">

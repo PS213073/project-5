@@ -14,7 +14,7 @@
                          </div>
                          <div class="text-center mt-16">
                              <button type="submit"
-                                 class="bg-blue-500 text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-blue-500 transition-colors ">Submit</button>
+                                 class="bg-blue-500 text-white font-bold px-5 py-1 rounded focus:outline-none shadow hover:bg-blue-500 transition-colors ">Oplsaan</button>
                          </div>
                  </div>
              </div>

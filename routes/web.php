@@ -47,9 +47,9 @@ Route::namespace('App\Http\Controllers\Admin')->name('admin.')->prefix('admin')
         Route::resource('roles', 'RoleController');
         Route::resource('permissions', 'PermissionController');
         Route::resource('users', 'UserController');
-        // Route::resource('posts', 'PostController');
         Route::resource('products', 'ProductController');
         Route::resource('categories', 'CategoryController');
+        Route::resource('shifts', 'ShiftController');
 
         // Kuin API
         Route::get('kuin/products', [KuinApiController::class, 'products'])->name('kuin.products');
