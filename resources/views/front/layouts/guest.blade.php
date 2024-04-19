@@ -15,16 +15,14 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+<style>
+    #bg {
+        background-image: url({{ asset('images/patren.png') }})
+    }
+</style>
 
 <body class="font-sans text-gray-900 antialiased">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-        <div>
-
-            @if (Route::currentRouteName() == 'login')
-            @elseif(Route::currentRouteName() == 'register')
-                <h1>Front Register</h1>
-            @endif
-        </div>
+    <div id="bg" class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 ">
 
         <div class="w-full sm:max-w-md mt-6 px-6 py-4">
             {{ $slot }}
