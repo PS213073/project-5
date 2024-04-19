@@ -63,7 +63,3 @@ Route::namespace('App\Http\Controllers\Admin')->name('admin.')->prefix('admin')
         // Route::put('/profile-update',[ProfileController::class,'update'])->name('profile.update');
 
     });
-
-
-// Fetch data from api
-// Route::get('/fetchapi', [ApiController::class, 'fetchPlantsFromExternalApi']);

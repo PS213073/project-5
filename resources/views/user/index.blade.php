@@ -18,23 +18,6 @@
                 Explore <i class="ri-arrow-right-down-line button__icon"></i>
             </a>
         </div>
-
-        <div class="home__social">
-            <span class="home__social-follow">
-                Follow Us
-            </span>
-            <div class="home__social-links">
-                <a href="" class="home__social-link" target="_blank">
-                    <i class="ri-facebook-fill"></i>
-                </a>
-                <a href="" class="home__social-link" target="_blank">
-                    <i class="ri-instagram-line"></i>
-                </a>
-                <a href="" class="home__social-link" target="_blank">
-                    <i class="ri-twitter-x-line"></i>
-                </a>
-            </div>
-        </div>
     </div>
 </section>
 
