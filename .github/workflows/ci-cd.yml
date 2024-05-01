@@ -23,9 +23,8 @@ jobs:
       run: composer install
 
     - name: Test Application
-      run: |
-        docker run --rm -v $(pwd):/app -w /app php:8.2-cli php ./vendor/bin/phpunit
-
+      run: ./vendor/bin/phpunit
+      
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
