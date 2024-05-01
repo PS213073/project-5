@@ -1,0 +1,30 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Test Application
+      run: |
+        docker run --rm -v $(pwd):/app -w /app php:8.1-cli php ./vendor/bin/phpunit
+
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.danielshahzada }}
+        password: ${{ secrets.dckr_pat_7sO4cynt80Nr3kygQ7rptWFu0fk }}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: danielshahzada/project5:latest
