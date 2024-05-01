@@ -7,15 +7,15 @@
 
         <div class="home__data">
             <h1 class="home__title">
-                Planten zullen het maken <br> je leven beter
+                Plants will make <br> your life better
             </h1>
             <p class="home__description">
-                Creëer een ongelooflijk plantontwerp voor uw kantoren of appartementen. Voeg frisheid toe aan uw nieuwe
-                ideeën.
+                Create incredible plant design for your offices or apastaments.
+                Add fresness to your new ideas.
             </p>
 
             <a href="" class="button button--flex">
-                Ontdekken <i class="ri-arrow-right-down-line button__icon"></i>
+                Explore <i class="ri-arrow-right-down-line button__icon"></i>
             </a>
         </div>
     </div>

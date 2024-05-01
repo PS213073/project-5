@@ -252,6 +252,12 @@ main {
     padding: 3.5rem 0 2rem;
 }
 
+.home__container {
+    position: relative;
+    row-gap: 2rem;
+    padding: 0 90px 0 90px;
+}
+
 .home__title {
     font-size: var(--big-font-size);
     line-height: 140%;
