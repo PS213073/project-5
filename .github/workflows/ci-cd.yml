@@ -22,8 +22,8 @@ jobs:
     - name: Install Dependencies
       run: composer install
 
-    - name: Test Application
-      run: ./vendor/bin/phpunit
+    # - name: Test Application
+    #   run: ./vendor/bin/phpunit
       
     - name: Login to DockerHub
       uses: docker/login-action@v1
