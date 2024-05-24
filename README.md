@@ -9,6 +9,7 @@ This is a Laravel application for an e-commerce website that sells plants and pl
 - **Product Details**: Users can view detailed information about each product, including its description, price, and color.
 - **Profit Margin Calculation**: The application calculates the final price for products based on a configurable profit margin percentage.
 - **Authentication and Authorization**: The application includes an authentication system and likely has different user roles or permissions for managing products.
+- **Roles and Permissions**: The application has a role-based access control system for managing employees. Administrators can assign roles and permissions to employees, allowing them to perform specific actions within the application.
 
 ## Technologies Used
 
@@ -17,6 +18,7 @@ This is a Laravel application for an e-commerce website that sells plants and pl
 - Tailwind CSS (utility-first CSS framework)
 - MySQL (or any other database supported by Laravel)
 - Laravel Eloquent ORM (for interacting with the database)
+- Spatie Laravel Permission (for managing roles and permissions)
 
 ## Installation
 
