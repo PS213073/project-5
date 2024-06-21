@@ -2,6 +2,23 @@
 
 This is a Laravel application for an e-commerce website that sells plants and plant-related products. It provides an admin panel for managing products and a front-end for displaying and purchasing products.
 
+## Screenshots
+![home](https://github.com/PS213073/project-5/assets/107118950/e1deffdf-e3f5-4a62-8939-77a978cd7d0e)
+
+![shop](https://github.com/PS213073/project-5/assets/107118950/2e6683f0-2844-4a73-8fe7-61509371890e)
+
+![contact](https://github.com/PS213073/project-5/assets/107118950/53281db8-6c46-45a0-9327-c230353e414d)
+
+![login](https://github.com/PS213073/project-5/assets/107118950/82ccd69d-41fa-4444-9acc-1955ed48c173)
+
+![dashboard](https://github.com/PS213073/project-5/assets/107118950/852dac31-2550-4d40-bd2c-e3bd3825e2a9)
+
+![products](https://github.com/PS213073/project-5/assets/107118950/815ba764-c532-4684-bdbd-468a4bb6d162)
+
+![orders](https://github.com/PS213073/project-5/assets/107118950/2499c3fa-eeb4-4b1a-b2ab-420a7413e5f7)
+
+
+
 ## Features
 
 - **Product Management**: Administrators can create, edit, and delete products through an intuitive admin panel.
@@ -56,3 +73,16 @@ npm run dev
 php artisan serve
 ```
 9. The application should now be accessible at http://localhost:8000.
+
+## Default User Credentials
+
+For testing purposes, you can use the following credentials:
+
+- Normal User:
+    - Username: test@test.nl
+    - Password: password
+
+- Admin User:
+    - Dashboard URL: http://127.0.0.1:8000/admin/dashboard
+    - Username: admin@admin.com
+    - Password: password

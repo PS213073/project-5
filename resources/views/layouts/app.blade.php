@@ -89,6 +89,7 @@
         }
     </style>
     @stack('scripts')
+    @stack('styles')
 
 </body>
 
